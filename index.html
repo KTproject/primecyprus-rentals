@@ -144,7 +144,7 @@ p { margin-bottom: 16px; color: var(--text-secondary); font-size: 1rem; line-hei
 .rental-card__badge--exclusive { background: var(--navy); }
 .rental-card__type-tag { position: absolute; top: 12px; right: 12px; background: rgba(255,255,255,0.95); color: var(--text-primary); font-size: 0.6rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; padding: 4px 10px; border-radius: 100px; }
 
-.rental-card__body { padding: 20px; flex: 1; display: flex; flex-direction: column; }
+.rental-card__body { padding: 28px; flex: 1; display: flex; flex-direction: column; }
 
 /* L1 — Location: tiny, copper, spaced caps */
 .rental-card__location { font-family: var(--font-body); font-size: 0.65rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--copper); margin-bottom: 6px; }
@@ -160,10 +160,10 @@ p { margin-bottom: 16px; color: var(--text-secondary); font-size: 1rem; line-hei
 .rental-card__feature { display: flex; align-items: center; gap: 4px; font-size: 0.75rem; font-weight: 500; color: var(--text-secondary); }
 
 /* L5 — Price: display serif large + bold. CTA: small button */
-.rental-card__footer { display: flex; align-items: center; justify-content: space-between; }
+.rental-card__footer { display: flex; flex-direction: column; align-items: stretch; gap: 12px; }
 .rental-card__price { font-family: var(--font-display); font-size: 1.25rem; font-weight: 700; color: var(--navy); }
 .rental-card__price-period { font-family: var(--font-body); font-size: 0.72rem; font-weight: 400; color: var(--text-muted); margin-left: 2px; }
-.rental-card__cta { font-size: 0.78rem; font-weight: 700; color: var(--copper); display: inline-flex; align-items: center; gap: 4px; padding: 7px 14px; border: 1.5px solid var(--border-copper); border-radius: 5px; transition: var(--transition); }
+.rental-card__cta { font-size: 0.78rem; font-weight: 700; color: var(--copper); display: inline-flex; align-items: center; justify-content: center; gap: 4px; padding: 7px 14px; border: 1.5px solid var(--border-copper); border-radius: 5px; transition: var(--transition); width: 100%; }
 .rental-card__cta:hover { background: var(--navy); border-color: var(--navy); color: #fff; }
 
 .listings-empty { grid-column: 1 / -1; text-align: center; padding: 60px; color: var(--text-muted); }
@@ -244,18 +244,6 @@ p { margin-bottom: 16px; color: var(--text-secondary); font-size: 1rem; line-hei
       <span class="nav__logo-name">&#9670; Prime <span class="accent">Cyprus</span></span>
       <span class="nav__logo-sub">Rentals</span>
     </a>
-    <ul class="nav__links">
-      <li><a href="#listings">All Rentals</a></li>
-      <li><a href="#areas">Areas</a></li>
-      <li><a href="#faq">FAQ</a></li>
-      <li><a href="https://primecyprus.xyz" target="_blank" rel="noopener">Main Site</a></li>
-    </ul>
-    <div class="nav__cta">
-      <a href="https://primecyprus.xyz/contact.html" class="btn btn--copper btn--sm">Book a Call &rarr;</a>
-    </div>
-    <button class="nav__hamburger" aria-label="Toggle menu">
-      <span></span><span></span><span></span>
-    </button>
   </div>
 </nav>
 
@@ -266,10 +254,6 @@ p { margin-bottom: 16px; color: var(--text-secondary); font-size: 1rem; line-hei
         <div class="hero__badge">&#127774; Premium Rentals &middot; Cyprus</div>
         <h1>A week, a season,<br>or a new <em>chapter.</em></h1>
         <p class="lead">Find premium rentals across Cyprus &mdash; curated villas, coastal apartments, and long-term homes for those making the island their base.</p>
-        <div class="hero__actions">
-          <a href="#listings" class="btn btn--primary">Browse Rentals &darr;</a>
-          <a href="https://primecyprus.xyz/contact.html" class="btn btn--outline">Talk to Us</a>
-        </div>
       </div>
       <div class="hero__visual">
         <div class="hero__visual-card">
@@ -282,11 +266,6 @@ p { margin-bottom: 16px; color: var(--text-secondary); font-size: 1rem; line-hei
               <span class="hero__visual-details">4 bed &middot; 3 bath &middot; 280m&sup2;</span>
             </div>
           </div>
-        </div>
-        <div class="hero__stats">
-          <div class="hero__stat"><span class="hero__stat-number">320</span><span class="hero__stat-label">Sunny Days</span></div>
-          <div class="hero__stat"><span class="hero__stat-number">5</span><span class="hero__stat-label">Regions</span></div>
-          <div class="hero__stat"><span class="hero__stat-number">0%</span><span class="hero__stat-label">Dividend Tax</span></div>
         </div>
       </div>
     </div>
@@ -322,7 +301,6 @@ p { margin-bottom: 16px; color: var(--text-secondary); font-size: 1rem; line-hei
     <div class="listings-grid" id="listingsGrid">
 
       <div class="rental-card animate-in" data-type="villa" data-location="limassol" data-term="long">
-        <div class="rental-card__img">&#127754;<span class="rental-card__badge rental-card__badge--exclusive">Prime Exclusive</span><span class="rental-card__type-tag">Villa</span></div>
         <div class="rental-card__body">
           <div class="rental-card__location">Limassol &middot; Agios Tychonas</div>
           <div class="rental-card__title">Seafront Villa with Infinity Pool</div>
@@ -341,7 +319,6 @@ p { margin-bottom: 16px; color: var(--text-secondary); font-size: 1rem; line-hei
       </div>
 
       <div class="rental-card animate-in" data-type="apartment" data-location="limassol" data-term="short long">
-        <div class="rental-card__img">&#127961;<span class="rental-card__badge">Available</span><span class="rental-card__type-tag">Apartment</span></div>
         <div class="rental-card__body">
           <div class="rental-card__location">Limassol &middot; City Centre</div>
           <div class="rental-card__title">Modern 2-Bed Marina Apartment</div>
@@ -360,7 +337,6 @@ p { margin-bottom: 16px; color: var(--text-secondary); font-size: 1rem; line-hei
       </div>
 
       <div class="rental-card animate-in" data-type="villa" data-location="paphos" data-term="short long">
-        <div class="rental-card__img">&#127807;<span class="rental-card__badge rental-card__badge--exclusive">Prime Exclusive</span><span class="rental-card__type-tag">Villa</span></div>
         <div class="rental-card__body">
           <div class="rental-card__location">Paphos &middot; Coral Bay</div>
           <div class="rental-card__title">Hillside Villa with Sea Views</div>
@@ -379,7 +355,6 @@ p { margin-bottom: 16px; color: var(--text-secondary); font-size: 1rem; line-hei
       </div>
 
       <div class="rental-card animate-in" data-type="apartment" data-location="nicosia" data-term="long">
-        <div class="rental-card__img">&#127963;<span class="rental-card__badge">Available</span><span class="rental-card__type-tag">Apartment</span></div>
         <div class="rental-card__body">
           <div class="rental-card__location">Nicosia &middot; Engomi</div>
           <div class="rental-card__title">Executive 3-Bed in Business District</div>
@@ -398,7 +373,6 @@ p { margin-bottom: 16px; color: var(--text-secondary); font-size: 1rem; line-hei
       </div>
 
       <div class="rental-card animate-in" data-type="house" data-location="larnaca" data-term="long">
-        <div class="rental-card__img">&#127796;<span class="rental-card__badge">Available</span><span class="rental-card__type-tag">House</span></div>
         <div class="rental-card__body">
           <div class="rental-card__location">Larnaca &middot; Mackenzie Beach</div>
           <div class="rental-card__title">Beachside House, 50m from Sea</div>
@@ -417,7 +391,6 @@ p { margin-bottom: 16px; color: var(--text-secondary); font-size: 1rem; line-hei
       </div>
 
       <div class="rental-card animate-in" data-type="apartment" data-location="paphos" data-term="short">
-        <div class="rental-card__img">&#9728;<span class="rental-card__badge">Short Stay</span><span class="rental-card__type-tag">Apartment</span></div>
         <div class="rental-card__body">
           <div class="rental-card__location">Paphos &middot; Kato Paphos</div>
           <div class="rental-card__title">Luxury 1-Bed near Harbour</div>
