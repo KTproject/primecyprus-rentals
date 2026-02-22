@@ -4,22 +4,61 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Prime Cyprus Rentals</title>
-  <!-- Your existing CSS links or styles here -->
+  <!-- Your existing CSS links, meta tags, etc. go here -->
 </head>
 <body>
-  <!-- Your existing nav/header here -->
 
-  <!-- Hero section with carousel - keep your existing or add photos -->
+  <!-- Your existing nav bar / header here -->
+  <nav>
+    <div class="logo">♦ Prime Cyprus Rentals</div>
+    <!-- Your nav items -->
+  </nav>
+
+  <!-- Hero section (keep your carousel or background) -->
   <section class="hero">
-    <!-- Your hero carousel or background here -->
     <h1>Discover Premium Rentals in Cyprus</h1>
     <p>Luxury villas, seafront apartments, and long-term homes — short stays or extended bases in Limassol, Paphos, and beyond.</p>
   </section>
 
-  <!-- Your search bar here (keep as is) -->
+  <!-- Search bar (keep as is) -->
   <div class="search-bar">
-    <!-- Your location, type, dates, guests, etc. inputs -->
-    <button>Search Rentals →</button>
+    <div class="search-field">
+      <label>Location</label>
+      <select>
+        <option>All</option>
+        <option>Limassol</option>
+        <option>Paphos</option>
+        <option>Nicosia</option>
+        <option>Larnaca</option>
+      </select>
+    </div>
+    <div class="search-field">
+      <label>Type</label>
+      <select>
+        <option>All</option>
+        <option>Villa</option>
+        <option>Apartment</option>
+        <option>House</option>
+      </select>
+    </div>
+    <div class="search-field">
+      <label>Check-in</label>
+      <input type="date">
+    </div>
+    <div class="search-field">
+      <label>Check-out</label>
+      <input type="date">
+    </div>
+    <div class="search-field">
+      <label>Guests / Beds</label>
+      <select>
+        <option>Any</option>
+        <option>1-2</option>
+        <option>3-4</option>
+        <option>5+</option>
+      </select>
+    </div>
+    <button class="search-btn">Search Rentals →</button>
   </div>
 
   <section class="listings-section" id="listings">
@@ -38,15 +77,16 @@
     </div>
   </section>
 
-  <!-- Your existing footer or other sections here -->
+  <!-- Your footer or other sections here -->
 
   <script type="module">
     import { client } from './lib/sanity.ts'
 
-    console.log('Script loaded - Sanity client:', client);
+    console.log('Sanity script loaded');
+    console.log('Client:', client);
 
     async function loadRentals() {
-      console.log('Fetching rentals from Sanity...');
+      console.log('Fetching rentals...');
 
       const query = `*[_type == "rental"] | order(_createdAt desc) [0..5] {
         title,
@@ -54,11 +94,11 @@
         priceMonthly,
         "imageUrl": images[0].asset->url,
         description
-      }`
+      }`;
 
       try {
         const rentals = await client.fetch(query);
-        console.log('Fetched rentals:', rentals);
+        console.log('Sanity data:', rentals);
 
         const count = document.getElementById('listingCount');
         if (count) count.textContent = rentals.length;
@@ -68,26 +108,24 @@
           grid.innerHTML = rentals.map(r => `
             <div class="rental-card animate-in">
               <div class="rental-card__body">
-                <div class="rental-card__location">${r.location || 'Location TBD'}</div>
+                <div class="rental-card__location">${r.location || 'N/A'}</div>
                 <div class="rental-card__title">${r.title || 'No title'}</div>
-                <div class="rental-card__desc">${r.description ? r.description.substring(0, 100) + '...' : 'No description'}</div>
-                <div class="rental-card__footer">
-                  <div class="rental-card__price">€${r.priceMonthly || 'N/A'} <span class="rental-card__price-period">/month</span></div>
-                  <a href="https://primecyprus.xyz/contact.html" class="rental-card__cta">Enquire →</a>
-                </div>
+                <div class="rental-card__desc">${r.description ? r.description.substring(0, 100) + '...' : 'No desc'}</div>
+                <div class="rental-card__price">€${r.priceMonthly || 'N/A'}/month</div>
+                <a href="https://primecyprus.xyz/contact.html" class="rental-card__cta">Enquire →</a>
               </div>
             </div>
           `).join('');
           console.log('Rendered', rentals.length, 'rentals');
         } else {
-          console.error('No #listingsGrid container found');
+          console.error('No #listingsGrid found');
         }
       } catch (err) {
-        console.error('Sanity fetch error:', err);
+        console.error('Fetch error:', err);
       }
     }
 
-    loadRentals();
+    document.addEventListener('DOMContentLoaded', loadRentals);
   </script>
 
 </body>
