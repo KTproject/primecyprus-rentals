@@ -3,571 +3,92 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Prime Cyprus Rentals &mdash; Premium Rentals Across Cyprus</title>
-  <meta name="description" content="Find premium rentals across Cyprus. Villas, apartments and houses for short stays, long term lets, and relocation. Limassol, Paphos, Nicosia, Larnaca and beyond.">
-  <meta name="keywords" content="Cyprus rentals, rent apartment Cyprus, villa rental Cyprus, Limassol rental, Paphos rental, long term rental Cyprus, short term rental Cyprus, expat rental Cyprus">
-  <link rel="canonical" href="https://rentals.primecyprus.xyz/">
-  <meta property="og:title" content="Prime Cyprus Rentals &mdash; Premium Rentals Across Cyprus">
-  <meta property="og:description" content="Discover premium rentals in Cyprus. Luxury villas, seafront apartments, and long-term homes in Limassol, Paphos, and beyond.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://rentals.primecyprus.xyz">
-  <meta property="og:site_name" content="Prime Cyprus Rentals">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Prime Cyprus Rentals">
-  <meta name="twitter:description" content="Premium rentals across Cyprus.">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"RealEstateAgent","name":"Prime Cyprus Rentals","description":"Premium rental listings across Cyprus for short stays, long term lets, and relocation.","url":"https://rentals.primecyprus.xyz","areaServed":{"@type":"Country","name":"Cyprus"},"parentOrganization":{"@type":"Organization","name":"Prime Cyprus","url":"https://primecyprus.xyz"}}</script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
-<style>
-
-:root {
-  --bg-primary: #f5f0e8;
-  --bg-secondary: #ede7d9;
-  --bg-card: #ffffff;
-  --text-primary: #1a1f2e;
-  --text-secondary: #4a5568;
-  --text-muted: #8896a8;
-  --copper: #b87333;
-  --copper-light: #d4935a;
-  --copper-glow: rgba(184,115,51,0.1);
-  --gold: #d4a853;
-  --amber: #c9a227;
-  --navy: #1a2744;
-  --border: rgba(26,31,46,0.1);
-  --border-copper: rgba(184,115,51,0.25);
-  --shadow-sm: 0 2px 12px rgba(26,31,46,0.07);
-  --shadow-md: 0 8px 32px rgba(26,31,46,0.12);
-  --font-display: 'Playfair Display', Georgia, serif;
-  --font-body: 'DM Sans', -apple-system, sans-serif;
-  --max-width: 1200px;
-  --transition: 0.3s cubic-bezier(0.4,0,0.2,1);
-}
-
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
-body { font-family: var(--font-body); background: var(--bg-primary); color: var(--text-primary); line-height: 1.7; font-size: 16px; overflow-x: hidden; }
-a { color: var(--copper); text-decoration: none; transition: var(--transition); }
-a:hover { color: var(--navy); }
-img { max-width: 100%; height: auto; display: block; }
-.container { max-width: var(--max-width); margin: 0 auto; padding: 0 24px; }
-.section { padding: 80px 0; }
-.section--alt { background: var(--bg-secondary); }
-
-/* === TYPOGRAPHY === */
-h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 700; line-height: 1.15; letter-spacing: -0.025em; color: var(--text-primary); }
-h1 { font-size: clamp(2.8rem, 5.5vw, 4.2rem); }
-h2 { font-size: clamp(2rem, 4vw, 2.8rem); margin-bottom: 20px; }
-h3 { font-size: clamp(1.25rem, 2.2vw, 1.6rem); margin-bottom: 12px; }
-p { margin-bottom: 16px; color: var(--text-secondary); font-size: 1rem; line-height: 1.75; }
-.lead { font-size: 1.15rem; line-height: 1.85; color: var(--text-secondary); max-width: 600px; }
-.section-label { font-family: var(--font-body); font-size: 0.72rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--copper); margin-bottom: 14px; display: block; }
-
-/* === BUTTONS === */
-.btn { display: inline-flex; align-items: center; gap: 8px; padding: 14px 30px; font-family: var(--font-body); font-size: 0.9rem; font-weight: 700; border: none; border-radius: 6px; cursor: pointer; transition: var(--transition); text-decoration: none; }
-.btn--primary { background: var(--navy); color: #fff; }
-.btn--primary:hover { background: #243360; color: #fff; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(26,39,68,0.2); }
-.btn--outline { background: transparent; color: var(--navy); border: 1.5px solid var(--border-copper); }
-.btn--outline:hover { background: var(--copper-glow); color: var(--copper); border-color: var(--copper); }
-.btn--copper { background: var(--copper); color: #fff; }
-.btn--copper:hover { background: var(--copper-light); color: #fff; transform: translateY(-2px); }
-.btn--sm { padding: 9px 20px; font-size: 0.82rem; }
-.btn--full { width: 100%; justify-content: center; }
-
-/* === NAV — dark glass, same DNA as main site === */
-.nav {
-  position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
-  background: rgba(15, 25, 35, 0.94);
-  backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
-  border-bottom: 1px solid rgba(255,255,255,0.07);
-  transition: var(--transition);
-}
-.nav__inner { display: flex; align-items: center; justify-content: space-between; height: 72px; max-width: var(--max-width); margin: 0 auto; padding: 0 24px; }
-.nav__logo { display: flex; flex-direction: column; gap: 3px; text-decoration: none; }
-.nav__logo-name { font-family: var(--font-display); font-size: 1.4rem; font-weight: 700; color: #f1f5f9; line-height: 1; display: flex; align-items: center; gap: 8px; }
-.nav__logo-name .accent { color: #d4a853; }
-.nav__logo-sub { font-size: 0.6rem; font-weight: 700; letter-spacing: 0.25em; text-transform: uppercase; color: #d4a853; line-height: 1; padding-left: 2px; }
-.nav__links { display: flex; align-items: center; gap: 36px; list-style: none; }
-.nav__links a { font-size: 0.9rem; font-weight: 600; color: rgba(241,245,249,0.7); transition: var(--transition); position: relative; }
-.nav__links a:hover, .nav__links a.active { color: #f1f5f9; }
-.nav__links a::after { content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 1.5px; background: #d4a853; transition: var(--transition); }
-.nav__links a:hover::after, .nav__links a.active::after { width: 100%; }
-.nav__cta { display: flex; align-items: center; gap: 12px; }
-.nav__hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 4px; }
-.nav__hamburger span { display: block; width: 22px; height: 2px; background: #f1f5f9; transition: var(--transition); }
-
-/* === HERO CAROUSEL === */
-.hero { padding: 0; position: relative; margin-top: 72px; }
-.hero .swiper { width: 100%; height: 65vh; min-height: 380px; max-height: 560px; }
-.hero .swiper-slide { position: relative; overflow: hidden; }
-.hero .swiper-slide img { width: 100%; height: 100%; object-fit: cover; display: block; }
-.hero__overlay { position: absolute; inset: 0; z-index: 2; pointer-events: none; background: linear-gradient(to top, rgba(15,25,35,0.85) 0%, rgba(15,25,35,0.35) 45%, transparent 70%); display: flex; align-items: center; justify-content: center; }
-.hero__copy { position: relative; z-index: 3; text-align: center; padding: 0 24px; max-width: 800px; }
-.hero__headline { font-family: var(--font-display); font-size: clamp(2rem, 4.5vw, 3.5rem); font-weight: 700; color: #fff; line-height: 1.15; margin-bottom: 16px; text-shadow: 0 2px 20px rgba(0,0,0,0.3); }
-.hero__headline .accent { color: var(--gold); }
-.hero__subheadline { font-family: var(--font-body); font-size: clamp(0.95rem, 1.8vw, 1.15rem); font-weight: 400; color: rgba(255,255,255,0.9); line-height: 1.6; text-shadow: 0 1px 12px rgba(0,0,0,0.25); }
-.hero .swiper-button-next, .hero .swiper-button-prev { color: var(--gold); --swiper-navigation-size: 28px; }
-.hero .swiper-button-next::after, .hero .swiper-button-prev::after { font-weight: 700; }
-.hero .swiper-pagination-bullet { background: rgba(255,255,255,0.5); opacity: 1; }
-.hero .swiper-pagination-bullet-active { background: var(--gold); width: 28px; border-radius: 4px; }
-
-/* === HERO SEARCH BAR === */
-.hero-search-wrap { padding: 0 24px 32px; }
-.hero-search { background: var(--bg-card); border-radius: 12px; box-shadow: var(--shadow-md); padding: 24px; margin: -48px auto 0; position: relative; z-index: 50; border: 1px solid var(--border); max-width: var(--max-width); }
-.hero-search__form { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 14px; align-items: end; }
-.hero-search__field { display: flex; flex-direction: column; gap: 6px; }
-.hero-search__field label { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-muted); }
-.hero-search__field select, .hero-search__field input { font-family: var(--font-body); font-size: 0.9rem; padding: 12px 14px; border: 1px solid var(--border); border-radius: 8px; background: var(--bg-primary); color: var(--text-primary); transition: var(--transition); -webkit-appearance: none; appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%234a5568' d='M6 8L1 3h10z'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 12px center; padding-right: 36px; }
-.hero-search__field input[type="date"] { background-image: none; padding-right: 14px; }
-.hero-search__field input::placeholder { color: var(--text-muted); }
-.hero-search__field select:focus, .hero-search__field input:focus { outline: none; border-color: var(--gold); box-shadow: 0 0 0 2px rgba(212,168,83,0.2); }
-.hero-search__submit { grid-column: span 1; }
-.hero-search__submit .btn { background: linear-gradient(135deg, var(--gold), var(--amber)); color: #1a1f2e; font-weight: 700; padding: 14px 24px; border-radius: 8px; width: 100%; justify-content: center; min-height: 46px; border: none; }
-.hero-search__submit .btn:hover { filter: brightness(1.08); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(201,162,39,0.35); }
-
-/* === LISTINGS === */
-.listings-section { padding: 56px 0 80px; }
-.listings-header { display: flex; align-items: flex-end; justify-content: space-between; margin-bottom: 32px; }
-.listings-count { font-size: 0.85rem; color: var(--text-muted); font-weight: 500; }
-.listings-count span { font-weight: 700; color: var(--text-primary); }
-.listings-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
-
-/* === RENTAL CARD — explicit 5-level type hierarchy === */
-.rental-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 14px; overflow: hidden; transition: var(--transition); box-shadow: var(--shadow-sm); display: flex; flex-direction: column; }
-.rental-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); border-color: var(--border-copper); }
-
-.rental-card__img { position: relative; height: 200px; background: linear-gradient(135deg, #c5d8ea, #8ab4cc); display: flex; align-items: center; justify-content: center; font-size: 2.8rem; overflow: hidden; }
-.rental-card__img img { width: 100%; height: 100%; object-fit: cover; }
-.rental-card__badge { position: absolute; top: 12px; left: 12px; background: var(--copper); color: #fff; font-size: 0.6rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 4px 10px; border-radius: 100px; }
-.rental-card__badge--exclusive { background: var(--navy); }
-.rental-card__type-tag { position: absolute; top: 12px; right: 12px; background: rgba(255,255,255,0.95); color: var(--text-primary); font-size: 0.6rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; padding: 4px 10px; border-radius: 100px; }
-
-.rental-card__body { padding: 28px; flex: 1; display: flex; flex-direction: column; }
-
-/* L1 — Location: tiny, copper, spaced caps */
-.rental-card__location { font-family: var(--font-body); font-size: 0.65rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--copper); margin-bottom: 6px; }
-
-/* L2 — Title: display serif, large, dark, dominant */
-.rental-card__title { font-family: var(--font-display); font-size: 1.2rem; font-weight: 700; color: var(--text-primary); margin-bottom: 8px; line-height: 1.25; }
-
-/* L3 — Description: body, regular weight, muted */
-.rental-card__desc { font-family: var(--font-body); font-size: 0.85rem; font-weight: 400; color: var(--text-muted); line-height: 1.65; margin-bottom: 16px; flex: 1; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
-
-/* L4 — Features: small, secondary */
-.rental-card__features { display: flex; gap: 10px; margin-bottom: 16px; padding-bottom: 16px; border-bottom: 1px solid var(--border); flex-wrap: wrap; }
-.rental-card__feature { display: flex; align-items: center; gap: 4px; font-size: 0.75rem; font-weight: 500; color: var(--text-secondary); }
-
-/* L5 — Price: display serif large + bold. CTA: small button */
-.rental-card__footer { display: flex; flex-direction: column; align-items: stretch; gap: 12px; }
-.rental-card__price { font-family: var(--font-display); font-size: 1.25rem; font-weight: 700; color: var(--navy); }
-.rental-card__price-period { font-family: var(--font-body); font-size: 0.72rem; font-weight: 400; color: var(--text-muted); margin-left: 2px; }
-.rental-card__cta { font-size: 0.78rem; font-weight: 700; color: var(--copper); display: inline-flex; align-items: center; justify-content: center; gap: 4px; padding: 7px 14px; border: 1.5px solid var(--border-copper); border-radius: 5px; transition: var(--transition); width: 100%; }
-.rental-card__cta:hover { background: var(--navy); border-color: var(--navy); color: #fff; }
-
-.listings-empty { grid-column: 1 / -1; text-align: center; padding: 60px; color: var(--text-muted); }
-
-/* === AREAS === */
-.areas-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 36px; }
-.area-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; padding: 24px 20px; text-align: center; cursor: pointer; transition: var(--transition); text-decoration: none; display: block; }
-.area-card:hover { border-color: var(--border-copper); box-shadow: var(--shadow-md); transform: translateY(-3px); }
-.area-card__emoji { font-size: 2rem; margin-bottom: 10px; }
-.area-card__name { font-family: var(--font-display); font-size: 1.1rem; font-weight: 700; color: var(--text-primary); margin-bottom: 5px; }
-.area-card__count { font-size: 0.78rem; color: var(--text-muted); font-weight: 500; }
-
-/* === BANNERS === */
-.list-cta { background: var(--navy); border-radius: 16px; padding: 48px; display: grid; grid-template-columns: 1fr auto; gap: 32px; align-items: center; margin-top: 60px; }
-.list-cta h3 { color: #fff; font-size: 1.5rem; margin-bottom: 8px; }
-.list-cta p { color: rgba(255,255,255,0.6); margin-bottom: 0; font-size: 0.9rem; }
-
-.crosssell { background: var(--copper-glow); border: 1px solid var(--border-copper); border-radius: 16px; padding: 48px; display: grid; grid-template-columns: 1fr auto; gap: 32px; align-items: center; }
-.crosssell h3 { font-size: 1.5rem; margin-bottom: 10px; }
-.crosssell p { margin-bottom: 0; max-width: 520px; }
-
-/* === FAQ === */
-.faq-list { max-width: 780px; margin: 40px auto 0; }
-.faq-item { border-bottom: 1px solid var(--border); }
-.faq-question { width: 100%; display: flex; align-items: center; justify-content: space-between; padding: 22px 0; font-family: var(--font-body); font-size: 1rem; font-weight: 600; color: var(--text-primary); background: none; border: none; cursor: pointer; text-align: left; transition: var(--transition); }
-.faq-question:hover { color: var(--copper); }
-.faq-icon { flex-shrink: 0; width: 28px; height: 28px; border-radius: 50%; border: 1.5px solid var(--border); display: flex; align-items: center; justify-content: center; font-size: 1rem; color: var(--copper); transition: var(--transition); }
-.faq-item.open .faq-icon { transform: rotate(45deg); background: var(--copper-glow); border-color: var(--copper); }
-.faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.35s ease-out; }
-.faq-answer__inner { padding: 0 0 22px; color: var(--text-secondary); font-size: 0.93rem; line-height: 1.8; }
-
-/* === FOOTER === */
-.footer { background: var(--navy); padding: 48px 0 28px; }
-.footer__inner { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px; margin-bottom: 40px; }
-.footer__brand-name { font-family: var(--font-display); font-size: 1.4rem; font-weight: 700; color: #f1f5f9; display: flex; flex-direction: column; gap: 3px; margin-bottom: 12px; }
-.footer__brand-name .accent { color: #d4a853; }
-.footer__brand-sub { font-size: 0.6rem; font-weight: 700; letter-spacing: 0.25em; text-transform: uppercase; color: #d4a853; }
-.footer__brand p { font-size: 0.85rem; color: rgba(255,255,255,0.45); max-width: 280px; margin-top: 8px; }
-.footer h4 { font-family: var(--font-body); font-size: 0.72rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.35); margin-bottom: 16px; }
-.footer__links { list-style: none; }
-.footer__links li { margin-bottom: 9px; }
-.footer__links a { font-size: 0.85rem; color: rgba(255,255,255,0.55); transition: var(--transition); }
-.footer__links a:hover { color: #fff; }
-.footer__bottom { border-top: 1px solid rgba(255,255,255,0.08); padding-top: 22px; display: flex; justify-content: space-between; align-items: center; font-size: 0.76rem; color: rgba(255,255,255,0.3); }
-
-/* === ANIMATIONS === */
-@keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
-.animate-in { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease-out, transform 0.6s ease-out; }
-.animate-in.visible { opacity: 1; transform: translateY(0); }
-
-/* === RESPONSIVE === */
-@media (max-width: 1024px) {
-  .hero .swiper { height: 55vh; min-height: 320px; }
-  .hero-search { margin: -40px auto 0; padding: 20px; }
-  .hero-search__form { grid-template-columns: repeat(2, 1fr); }
-  .hero-search__submit { grid-column: 1 / -1; }
-  .listings-grid { grid-template-columns: repeat(2, 1fr); }
-  .footer__inner { grid-template-columns: 1fr 1fr; }
-  .list-cta, .crosssell { grid-template-columns: 1fr; }
-}
-@media (max-width: 768px) {
-  .section { padding: 56px 0; }
-  .nav__links, .nav__cta .btn--sm { display: none; }
-  .nav__hamburger { display: flex; }
-  .nav.mobile-open .nav__links { display: flex; flex-direction: column; position: absolute; top: 72px; left: 0; right: 0; background: #0f1923; border-bottom: 1px solid rgba(255,255,255,0.07); padding: 24px; gap: 20px; }
-  .hero { margin-top: 72px; }
-  .hero .swiper { height: 50vh; min-height: 280px; }
-  .hero-search-wrap { padding: 0 16px 24px; }
-  .hero-search { margin: -32px auto 0; padding: 18px; }
-  .hero-search__form { grid-template-columns: 1fr; }
-  .listings-grid { grid-template-columns: 1fr; }
-  .areas-grid { grid-template-columns: repeat(2, 1fr); }
-  .footer__inner { grid-template-columns: 1fr; gap: 28px; }
-  .footer__bottom { flex-direction: column; gap: 12px; text-align: center; }
-  .list-cta, .crosssell { padding: 32px; }
-}
-</style>
+  <title>Prime Cyprus Rentals</title>
+  <!-- Your existing CSS links or styles here -->
 </head>
 <body>
+  <!-- Your existing nav/header here -->
 
-<nav class="nav" role="navigation">
-  <div class="nav__inner">
-    <a href="/" class="nav__logo">
-      <span class="nav__logo-name">&#9670; Prime <span class="accent">Cyprus</span></span>
-      <span class="nav__logo-sub">Rentals</span>
-    </a>
+  <!-- Hero section with carousel - keep your existing or add photos -->
+  <section class="hero">
+    <!-- Your hero carousel or background here -->
+    <h1>Discover Premium Rentals in Cyprus</h1>
+    <p>Luxury villas, seafront apartments, and long-term homes — short stays or extended bases in Limassol, Paphos, and beyond.</p>
+  </section>
+
+  <!-- Your search bar here (keep as is) -->
+  <div class="search-bar">
+    <!-- Your location, type, dates, guests, etc. inputs -->
+    <button>Search Rentals →</button>
   </div>
-</nav>
 
-<section class="hero" aria-label="Hero carousel">
-  <div class="swiper hero-swiper">
-    <div class="swiper-wrapper">
-      <div class="swiper-slide">
-        <img src="hero-beachfront-cyprus-rental.webp" alt="Modern interior with sea view" width="1920" height="1080" loading="eager">
+  <section class="listings-section" id="listings">
+    <div class="container">
+      <div class="listings-header">
+        <div>
+          <span class="section-label">Available Now</span>
+          <h2>Featured Rentals</h2>
+        </div>
+        <div class="listings-count">Showing <span id="listingCount">0</span> properties</div>
       </div>
-      <div class="swiper-slide">
-        <img src="hero-cyprus-seafront-villa-limassol.webp" alt="Family terrace and pool with sea view" width="1920" height="1080" loading="lazy">
-      </div>
-      <div class="swiper-slide">
-        <img src="rental-cyprus-greece-luxury.webp" alt="Sea-view terrace and balcony" width="1920" height="1080" loading="lazy">
+
+      <div class="listings-grid" id="listingsGrid">
+        <!-- Rentals from Sanity will load here -->
       </div>
     </div>
-    <div class="swiper-button-next" aria-label="Next slide"></div>
-    <div class="swiper-button-prev" aria-label="Previous slide"></div>
-    <div class="swiper-pagination"></div>
-  </div>
-  <div class="hero__overlay" aria-hidden="true">
-    <div class="hero__copy">
-      <h1 class="hero__headline">Discover Premium Rentals in <span class="accent">Cyprus</span></h1>
-      <p class="hero__subheadline">Luxury villas, seafront apartments, and long-term homes — short stays or extended bases in Limassol, Paphos, and beyond.</p>
-    </div>
-  </div>
-</section>
+  </section>
 
-<div class="hero-search-wrap">
-  <div class="hero-search">
-    <form class="hero-search__form" action="#listings" method="get" role="search">
-      <div class="hero-search__field">
-        <label for="search-location">Location</label>
-        <select id="search-location" name="location" aria-label="Location">
-          <option value="">All</option>
-          <option value="limassol">Limassol</option>
-          <option value="paphos">Paphos</option>
-          <option value="nicosia">Nicosia</option>
-          <option value="larnaca">Larnaca</option>
-        </select>
-      </div>
-      <div class="hero-search__field">
-        <label for="search-type">Type</label>
-        <select id="search-type" name="type" aria-label="Property type">
-          <option value="">All</option>
-          <option value="villa">Villa</option>
-          <option value="apartment">Apartment</option>
-          <option value="house">House</option>
-        </select>
-      </div>
-      <div class="hero-search__field">
-        <label for="search-checkin">Check-in</label>
-        <input type="date" id="search-checkin" name="checkin" aria-label="Check-in date">
-      </div>
-      <div class="hero-search__field">
-        <label for="search-checkout">Check-out</label>
-        <input type="date" id="search-checkout" name="checkout" aria-label="Check-out date">
-      </div>
-      <div class="hero-search__field">
-        <label for="search-guests">Guests / Beds</label>
-        <select id="search-guests" name="guests" aria-label="Guests or beds">
-          <option value="">Any</option>
-          <option value="1-2">1–2</option>
-          <option value="3-4">3–4</option>
-          <option value="5+">5+</option>
-        </select>
-      </div>
-      <div class="hero-search__submit">
-        <button type="submit" class="btn">Search Rentals →</button>
-      </div>
-    </form>
-  </div>
-</div>
+  <!-- Your existing footer or other sections here -->
 
-<section class="listings-section" id="listings">
-  <div class="container">
-    <div class="listings-header">
-      <div>
-        <span class="section-label">Available Now</span>
-        <h2>Featured Rentals</h2>
-      </div>
-      <div class="listings-count">Showing <span id="listingCount">0</span> properties</div>
-    </div>
+  <script type="module">
+    import { client } from './lib/sanity.ts'
 
-    <div class="listings-grid" id="listingsGrid">
-      <!-- Rentals from Sanity will load here -->
-    </div>
-  </div>
-</section>
+    console.log('Script loaded - Sanity client:', client);
 
-<script type="module">
-  import { client } from './lib/sanity.ts'
+    async function loadRentals() {
+      console.log('Fetching rentals from Sanity...');
 
-  async function loadRentals() {
-    const query = `*[_type == "rental"] | order(_createdAt desc) [0..5] {
-      title,
-      location,
-      priceMonthly,
-      "imageUrl": images[0].asset->url,
-      description
-    }`
+      const query = `*[_type == "rental"] | order(_createdAt desc) [0..5] {
+        title,
+        location,
+        priceMonthly,
+        "imageUrl": images[0].asset->url,
+        description
+      }`
 
-    const rentals = await client.fetch(query)
-    console.log('Sanity rentals:', rentals)
+      try {
+        const rentals = await client.fetch(query);
+        console.log('Fetched rentals:', rentals);
 
-    const count = document.getElementById('listingCount')
-    if (count) count.textContent = rentals.length
+        const count = document.getElementById('listingCount');
+        if (count) count.textContent = rentals.length;
 
-    const grid = document.getElementById('listingsGrid')
-    if (grid) {
-      grid.innerHTML = rentals.map(r => `
-        <div class="rental-card animate-in">
-          <div class="rental-card__body">
-            <div class="rental-card__location">${r.location || 'Location TBD'}</div>
-            <div class="rental-card__title">${r.title}</div>
-            <div class="rental-card__desc">${r.description.substring(0, 100)}...</div>
-            <div class="rental-card__footer">
-              <div class="rental-card__price">€${r.priceMonthly || 'N/A'} <span class="rental-card__price-period">/month</span></div>
-              <a href="https://primecyprus.xyz/contact.html" class="rental-card__cta">Enquire →</a>
+        const grid = document.getElementById('listingsGrid');
+        if (grid) {
+          grid.innerHTML = rentals.map(r => `
+            <div class="rental-card animate-in">
+              <div class="rental-card__body">
+                <div class="rental-card__location">${r.location || 'Location TBD'}</div>
+                <div class="rental-card__title">${r.title || 'No title'}</div>
+                <div class="rental-card__desc">${r.description ? r.description.substring(0, 100) + '...' : 'No description'}</div>
+                <div class="rental-card__footer">
+                  <div class="rental-card__price">€${r.priceMonthly || 'N/A'} <span class="rental-card__price-period">/month</span></div>
+                  <a href="https://primecyprus.xyz/contact.html" class="rental-card__cta">Enquire →</a>
+                </div>
+              </div>
             </div>
-          </div>
-        </div>
-      `).join('')
-    } else {
-      console.error('No #listingsGrid found — check selector')
-    }
-  }
-
-  loadRentals()
-</script>
-
-<section class="section section--alt" id="areas">
-  <div class="container">
-    <span class="section-label animate-in">Browse by Location</span>
-    <h2 class="animate-in">Find your ideal base.</h2>
-    <p class="lead animate-in">From cosmopolitan Limassol to the relaxed charm of Paphos &mdash; each region has its own character.</p>
-    <div class="areas-grid">
-      <a href="#listings" class="area-card animate-in" data-area="limassol"><div class="area-card__emoji">&#127750;</div><div class="area-card__name">Limassol</div><div class="area-card__count">Most cosmopolitan &middot; Business hub</div></a>
-      <a href="#listings" class="area-card animate-in" data-area="paphos"><div class="area-card__emoji">&#127963;</div><div class="area-card__name">Paphos</div><div class="area-card__count">Relaxed &middot; Large expat community</div></a>
-      <a href="#listings" class="area-card animate-in" data-area="nicosia"><div class="area-card__emoji">&#127961;</div><div class="area-card__name">Nicosia</div><div class="area-card__count">Capital &middot; Ideal for business</div></a>
-      <a href="#listings" class="area-card animate-in" data-area="larnaca"><div class="area-card__emoji">&#9992;</div><div class="area-card__name">Larnaca</div><div class="area-card__count">Airport access &middot; Growing scene</div></a>
-      <a href="#listings" class="area-card animate-in" data-area="protaras"><div class="area-card__emoji">&#127958;</div><div class="area-card__name">Protaras</div><div class="area-card__count">Beach &middot; Seasonal stays</div></a>
-      <a href="https://primecyprus.xyz" target="_blank" class="area-card animate-in"><div class="area-card__emoji">&#127968;</div><div class="area-card__name">Buy in Cyprus</div><div class="area-card__count">Properties for sale &rarr;</div></a>
-    </div>
-  </div>
-</section>
-
-<section style="padding: 64px 0;">
-  <div class="container">
-    <div class="crosssell animate-in">
-      <div>
-        <span class="section-label">Relocating to Cyprus?</span>
-        <h3>More than a rental &mdash; a new chapter.</h3>
-        <p>Prime Cyprus helps digital economy professionals relocate with tax optimization, residency planning, and property investment. A rental is often the first step.</p>
-      </div>
-      <a href="https://primecyprus.xyz" class="btn btn--primary">Explore Residency &rarr;</a>
-    </div>
-  </div>
-</section>
-
-<section class="section section--alt" id="faq">
-  <div class="container">
-    <div style="text-align: center;">
-      <span class="section-label animate-in">FAQ</span>
-      <h2 class="animate-in">Common questions about renting in Cyprus.</h2>
-    </div>
-    <div class="faq-list">
-      <div class="faq-item animate-in">
-        <button class="faq-question" aria-expanded="false"><span>What is the average rent in Limassol?</span><span class="faq-icon">+</span></button>
-        <div class="faq-answer"><div class="faq-answer__inner">A modern 2-bedroom apartment in central or coastal Limassol typically ranges from &euro;1,500 to &euro;3,000 per month. Luxury villas in Germasogeia or Agios Tychonas range from &euro;4,000 to &euro;10,000+ per month. Short-term rentals command a premium over long-term lets.</div></div>
-      </div>
-      <div class="faq-item animate-in">
-        <button class="faq-question" aria-expanded="false"><span>Can foreigners rent in Cyprus?</span><span class="faq-icon">+</span></button>
-        <div class="faq-answer"><div class="faq-answer__inner">Yes. There are no restrictions on foreigners renting in Cyprus. EU citizens can rent freely. Non-EU nationals can also rent without restrictions &mdash; a valid passport is typically required when signing a lease.</div></div>
-      </div>
-      <div class="faq-item animate-in">
-        <button class="faq-question" aria-expanded="false"><span>How long can I stay in Cyprus as a tourist?</span><span class="faq-icon">+</span></button>
-        <div class="faq-answer"><div class="faq-answer__inner">EU citizens can stay indefinitely. Non-EU nationals can stay up to 90 days within any 180-day period without a visa. For longer stays, a temporary residency permit is required. Many clients use Cyprus&rsquo;s 60-day tax residency rule to structure their stays efficiently.</div></div>
-      </div>
-      <div class="faq-item animate-in">
-        <button class="faq-question" aria-expanded="false"><span>What should I check before signing a rental lease?</span><span class="faq-icon">+</span></button>
-        <div class="faq-answer"><div class="faq-answer__inner">Check that the property has a valid title deed, whether utilities are included, air conditioning provision, parking, and proximity to amenities. For long-term rentals, ensure the lease is in writing and registered with the Cyprus Land Registry.</div></div>
-      </div>
-      <div class="faq-item animate-in">
-        <button class="faq-question" aria-expanded="false"><span>Is Cyprus a good place to live as an expat?</span><span class="faq-icon">+</span></button>
-        <div class="faq-answer"><div class="faq-answer__inner">Yes. Cyprus ranks highly for expat quality of life. English is widely spoken, it is an EU member state with 320 days of sunshine per year, low crime rates, good healthcare, and a strong international community particularly in Limassol and Paphos. 3 hours by flight from most European cities.</div></div>
-      </div>
-      <div class="faq-item animate-in">
-        <button class="faq-question" aria-expanded="false"><span>What&rsquo;s the difference between short-term and long-term rental?</span><span class="faq-icon">+</span></button>
-        <div class="faq-answer"><div class="faq-answer__inner">Short-term rentals (days to a few months) are typically furnished and serviced, priced per night or week. Long-term rentals (6 months+) are usually unfurnished or semi-furnished, rented monthly, and significantly cheaper per month. Many relocating clients start short-term while searching for their long-term home.</div></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<footer class="footer">
-  <div class="container">
-    <div class="footer__inner">
-      <div class="footer__brand">
-        <div class="footer__brand-name"><span>&#9670; Prime <span class="accent">Cyprus</span></span><span class="footer__brand-sub">Rentals</span></div>
-        <p>Premium rental listings across Cyprus for short stays, long-term lets, and those making the island home.</p>
-      </div>
-      <div>
-        <h4>Browse</h4>
-        <ul class="footer__links">
-          <li><a href="#listings">All Rentals</a></li>
-          <li><a href="#areas">Browse by Area</a></li>
-          <li><a href="https://primecyprus.xyz/contact.html">Enquire</a></li>
-          <li><a href="https://primecyprus.xyz/contact.html">List Your Property</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Prime Cyprus</h4>
-        <ul class="footer__links">
-          <li><a href="https://primecyprus.xyz">Main Site</a></li>
-          <li><a href="https://primecyprus.xyz/residency-tax.html">Residency &amp; Tax</a></li>
-          <li><a href="https://primecyprus.xyz/property.html">Property for Sale</a></li>
-          <li><a href="https://primecyprus.xyz/contact.html">Contact</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="footer__bottom">
-      <span>&copy; 2026 Prime Cyprus. All rights reserved.</span>
-      <span>General information only. Not legal or financial advice.</span>
-    </div>
-  </div>
-</footer>
-
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-<script>
-document.addEventListener('DOMContentLoaded', () => {
-  const heroSwiper = new Swiper('.hero-swiper', {
-    loop: true,
-    autoplay: { delay: 5500, disableOnInteraction: false },
-    effect: 'fade',
-    fadeEffect: { crossFade: true },
-    speed: 800,
-    pagination: { el: '.swiper-pagination', clickable: true },
-    navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' },
-    grabCursor: true,
-    a11y: { prevSlideMessage: 'Previous slide', nextSlideMessage: 'Next slide' }
-  });
-
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry, i) => {
-      if (entry.isIntersecting) {
-        setTimeout(() => entry.target.classList.add('visible'), i * 80);
-        observer.unobserve(entry.target);
+          `).join('');
+          console.log('Rendered', rentals.length, 'rentals');
+        } else {
+          console.error('No #listingsGrid container found');
+        }
+      } catch (err) {
+        console.error('Sanity fetch error:', err);
       }
-    });
-  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-  document.querySelectorAll('.animate-in').forEach(el => observer.observe(el));
-
-  document.querySelectorAll('.faq-question').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const item = btn.parentElement;
-      const answer = item.querySelector('.faq-answer');
-      const isOpen = item.classList.contains('open');
-      document.querySelectorAll('.faq-item.open').forEach(o => {
-        o.classList.remove('open');
-        o.querySelector('.faq-answer').style.maxHeight = null;
-        o.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
-      });
-      if (!isOpen) {
-        item.classList.add('open');
-        answer.style.maxHeight = answer.scrollHeight + 'px';
-        btn.setAttribute('aria-expanded', 'true');
-      }
-    });
-  });
-
-  const hamburger = document.querySelector('.nav__hamburger');
-  const nav = document.querySelector('.nav');
-  if (hamburger) hamburger.addEventListener('click', () => nav.classList.toggle('mobile-open'));
-
-  document.querySelectorAll('.area-card[data-area]').forEach(card => {
-    card.addEventListener('click', (e) => {
-      e.preventDefault();
-      document.getElementById('listings').scrollIntoView({ behavior: 'smooth' });
-    });
-  });
-});
-</script>
-<script type="module">
-  import { client } from './lib/sanity.ts'
-
-  async function loadRentals() {
-    const query = `*[_type == "rental"] | order(_createdAt desc) [0..5] {
-      title,
-      location,
-      priceMonthly,
-      "imageUrl": images[0].asset->url,
-      description
-    }`
-
-    const rentals = await client.fetch(query)
-    console.log('Your rentals from Sanity:', rentals)
-
-    // Find the container where you want to show rentals
-    // CHANGE THIS SELECTOR to match your HTML
-    const container = document.querySelector('.featured-rentals') || document.querySelector('.grid') || document.querySelector('#featured')
-
-    if (container) {
-      container.innerHTML = rentals.map(r => `
-        <div class="rental-card">
-          <img src="${r.imageUrl || 'placeholder.jpg'}" alt="${r.title}" loading="lazy" />
-          <h3>${r.title}</h3>
-          <p>${r.location || 'Location TBD'}</p>
-          <p>€${r.priceMonthly || 'N/A'}/month</p>
-          <p>${r.description.substring(0, 100)}...</p>
-          <button>Enquire →</button>
-        </div>
-      `).join('')
-    } else {
-      console.error('No container found for rentals - check your selector')
     }
-  }
 
-  loadRentals()
-</script>
+    loadRentals();
+  </script>
+
 </body>
 </html>
