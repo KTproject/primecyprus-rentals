@@ -606,5 +606,25 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 </script>
+<script type="module">
+  import { client } from './lib/sanity.ts'
+
+  async function loadRentals() {
+    const query = `*[_type == "rental"]{
+      title,
+      location,
+      priceMonthly,
+      "imageUrl": images[0].asset->url
+    }`
+
+    const rentals = await client.fetch(query)
+    console.log('Your rentals from Sanity:', rentals)
+
+    // Example: show in console for now
+    // Later: display in HTML cards
+  }
+
+  loadRentals()
+</script>
 </body>
 </html>
