@@ -8,7 +8,7 @@
   <meta name="keywords" content="Cyprus rentals, rent apartment Cyprus, villa rental Cyprus, Limassol rental, Paphos rental, long term rental Cyprus, short term rental Cyprus, expat rental Cyprus">
   <link rel="canonical" href="https://rentals.primecyprus.xyz/">
   <meta property="og:title" content="Prime Cyprus Rentals &mdash; Premium Rentals Across Cyprus">
-  <meta property="og:description" content="A week, a season, or a new chapter. Premium rentals across Cyprus.">
+  <meta property="og:description" content="Discover premium rentals in Cyprus. Luxury villas, seafront apartments, and long-term homes in Limassol, Paphos, and beyond.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://rentals.primecyprus.xyz">
   <meta property="og:site_name" content="Prime Cyprus Rentals">
@@ -19,6 +19,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
 <style>
 
 :root {
@@ -31,6 +32,8 @@
   --copper: #b87333;
   --copper-light: #d4935a;
   --copper-glow: rgba(184,115,51,0.1);
+  --gold: #d4a853;
+  --amber: #c9a227;
   --navy: #1a2744;
   --border: rgba(26,31,46,0.1);
   --border-copper: rgba(184,115,51,0.25);
@@ -94,37 +97,34 @@ p { margin-bottom: 16px; color: var(--text-secondary); font-size: 1rem; line-hei
 .nav__hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 4px; }
 .nav__hamburger span { display: block; width: 22px; height: 2px; background: #f1f5f9; transition: var(--transition); }
 
-/* === HERO === */
-.hero { padding: 136px 0 76px; position: relative; overflow: hidden; }
-.hero::before { content: ''; position: absolute; top: -60px; right: -100px; width: 520px; height: 520px; border-radius: 50%; background: radial-gradient(circle, rgba(184,115,51,0.08) 0%, transparent 70%); pointer-events: none; }
-.hero__inner { position: relative; z-index: 1; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
-.hero h1 { margin-bottom: 20px; }
-.hero h1 em { font-style: italic; color: var(--copper); }
-.hero .lead { margin-bottom: 36px; }
-.hero__actions { display: flex; gap: 12px; flex-wrap: wrap; }
-.hero__visual-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 16px; overflow: hidden; box-shadow: var(--shadow-md); }
-.hero__visual-img { height: 210px; background: linear-gradient(135deg, #c5d8ea, #8ab4cc); display: flex; align-items: center; justify-content: center; font-size: 3.5rem; position: relative; }
-.hero__visual-badge { position: absolute; top: 14px; left: 14px; background: var(--navy); color: #fff; font-size: 0.62rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; padding: 4px 10px; border-radius: 100px; }
-.hero__visual-body { padding: 20px 24px; }
-.hero__visual-location { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--copper); margin-bottom: 6px; }
-.hero__visual-title { font-family: var(--font-display); font-size: 1.1rem; font-weight: 700; color: var(--text-primary); margin-bottom: 14px; line-height: 1.25; }
-.hero__visual-meta { display: flex; justify-content: space-between; align-items: center; }
-.hero__visual-price { font-family: var(--font-display); font-size: 1.15rem; font-weight: 700; color: var(--navy); }
-.hero__visual-price span { font-family: var(--font-body); font-size: 0.75rem; font-weight: 400; color: var(--text-muted); }
-.hero__visual-details { font-size: 0.8rem; color: var(--text-muted); }
-.hero__stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 14px; }
-.hero__stat { background: var(--bg-primary); border: 1px solid var(--border); border-radius: 10px; padding: 14px; text-align: center; }
-.hero__stat-number { font-family: var(--font-display); font-size: 1.3rem; font-weight: 700; color: var(--copper); display: block; }
-.hero__stat-label { font-size: 0.62rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-muted); }
+/* === HERO CAROUSEL === */
+.hero { padding: 0; position: relative; margin-top: 72px; }
+.hero .swiper { width: 100%; height: 65vh; min-height: 380px; max-height: 560px; }
+.hero .swiper-slide { position: relative; overflow: hidden; }
+.hero .swiper-slide img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.hero__overlay { position: absolute; inset: 0; z-index: 2; pointer-events: none; background: linear-gradient(to top, rgba(15,25,35,0.85) 0%, rgba(15,25,35,0.35) 45%, transparent 70%); display: flex; align-items: center; justify-content: center; }
+.hero__copy { position: relative; z-index: 3; text-align: center; padding: 0 24px; max-width: 800px; }
+.hero__headline { font-family: var(--font-display); font-size: clamp(2rem, 4.5vw, 3.5rem); font-weight: 700; color: #fff; line-height: 1.15; margin-bottom: 16px; text-shadow: 0 2px 20px rgba(0,0,0,0.3); }
+.hero__headline .accent { color: var(--gold); }
+.hero__subheadline { font-family: var(--font-body); font-size: clamp(0.95rem, 1.8vw, 1.15rem); font-weight: 400; color: rgba(255,255,255,0.9); line-height: 1.6; text-shadow: 0 1px 12px rgba(0,0,0,0.25); }
+.hero .swiper-button-next, .hero .swiper-button-prev { color: var(--gold); --swiper-navigation-size: 28px; }
+.hero .swiper-button-next::after, .hero .swiper-button-prev::after { font-weight: 700; }
+.hero .swiper-pagination-bullet { background: rgba(255,255,255,0.5); opacity: 1; }
+.hero .swiper-pagination-bullet-active { background: var(--gold); width: 28px; border-radius: 4px; }
 
-/* === FILTER BAR === */
-.filter-bar { background: var(--bg-card); border-bottom: 1px solid var(--border); position: sticky; top: 72px; z-index: 100; box-shadow: var(--shadow-sm); }
-.filter-bar__inner { max-width: var(--max-width); margin: 0 auto; padding: 0 24px; display: flex; align-items: center; gap: 8px; height: 56px; overflow-x: auto; scrollbar-width: none; }
-.filter-bar__inner::-webkit-scrollbar { display: none; }
-.filter-btn { display: inline-flex; align-items: center; gap: 6px; padding: 7px 16px; font-family: var(--font-body); font-size: 0.8rem; font-weight: 600; color: var(--text-secondary); background: transparent; border: 1.5px solid var(--border); border-radius: 100px; cursor: pointer; white-space: nowrap; transition: var(--transition); flex-shrink: 0; }
-.filter-btn:hover { border-color: var(--copper); color: var(--copper); }
-.filter-btn.active { background: var(--navy); border-color: var(--navy); color: #fff; }
-.filter-divider { width: 1px; height: 22px; background: var(--border); flex-shrink: 0; margin: 0 4px; }
+/* === HERO SEARCH BAR === */
+.hero-search-wrap { padding: 0 24px 32px; }
+.hero-search { background: var(--bg-card); border-radius: 12px; box-shadow: var(--shadow-md); padding: 24px; margin: -48px auto 0; position: relative; z-index: 50; border: 1px solid var(--border); max-width: var(--max-width); }
+.hero-search__form { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 14px; align-items: end; }
+.hero-search__field { display: flex; flex-direction: column; gap: 6px; }
+.hero-search__field label { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-muted); }
+.hero-search__field select, .hero-search__field input { font-family: var(--font-body); font-size: 0.9rem; padding: 12px 14px; border: 1px solid var(--border); border-radius: 8px; background: var(--bg-primary); color: var(--text-primary); transition: var(--transition); -webkit-appearance: none; appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%234a5568' d='M6 8L1 3h10z'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 12px center; padding-right: 36px; }
+.hero-search__field input[type="date"] { background-image: none; padding-right: 14px; }
+.hero-search__field input::placeholder { color: var(--text-muted); }
+.hero-search__field select:focus, .hero-search__field input:focus { outline: none; border-color: var(--gold); box-shadow: 0 0 0 2px rgba(212,168,83,0.2); }
+.hero-search__submit { grid-column: span 1; }
+.hero-search__submit .btn { background: linear-gradient(135deg, var(--gold), var(--amber)); color: #1a1f2e; font-weight: 700; padding: 14px 24px; border-radius: 8px; width: 100%; justify-content: center; min-height: 46px; border: none; }
+.hero-search__submit .btn:hover { filter: brightness(1.08); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(201,162,39,0.35); }
 
 /* === LISTINGS === */
 .listings-section { padding: 56px 0 80px; }
@@ -215,8 +215,10 @@ p { margin-bottom: 16px; color: var(--text-secondary); font-size: 1rem; line-hei
 
 /* === RESPONSIVE === */
 @media (max-width: 1024px) {
-  .hero__inner { grid-template-columns: 1fr; }
-  .hero__visual { display: none; }
+  .hero .swiper { height: 55vh; min-height: 320px; }
+  .hero-search { margin: -40px auto 0; padding: 20px; }
+  .hero-search__form { grid-template-columns: repeat(2, 1fr); }
+  .hero-search__submit { grid-column: 1 / -1; }
   .listings-grid { grid-template-columns: repeat(2, 1fr); }
   .footer__inner { grid-template-columns: 1fr 1fr; }
   .list-cta, .crosssell { grid-template-columns: 1fr; }
@@ -226,11 +228,15 @@ p { margin-bottom: 16px; color: var(--text-secondary); font-size: 1rem; line-hei
   .nav__links, .nav__cta .btn--sm { display: none; }
   .nav__hamburger { display: flex; }
   .nav.mobile-open .nav__links { display: flex; flex-direction: column; position: absolute; top: 72px; left: 0; right: 0; background: #0f1923; border-bottom: 1px solid rgba(255,255,255,0.07); padding: 24px; gap: 20px; }
+  .hero { margin-top: 72px; }
+  .hero .swiper { height: 50vh; min-height: 280px; }
+  .hero-search-wrap { padding: 0 16px 24px; }
+  .hero-search { margin: -32px auto 0; padding: 18px; }
+  .hero-search__form { grid-template-columns: 1fr; }
   .listings-grid { grid-template-columns: 1fr; }
   .areas-grid { grid-template-columns: repeat(2, 1fr); }
   .footer__inner { grid-template-columns: 1fr; gap: 28px; }
   .footer__bottom { flex-direction: column; gap: 12px; text-align: center; }
-  .hero { padding: 110px 0 56px; }
   .list-cta, .crosssell { padding: 32px; }
 }
 </style>
@@ -246,44 +252,74 @@ p { margin-bottom: 16px; color: var(--text-secondary); font-size: 1rem; line-hei
   </div>
 </nav>
 
-<section class="hero">
-  <div class="container">
-    <div class="hero__inner">
-      <div class="hero__content">
-        <h1>A week, a season,<br>or a new <em>chapter.</em></h1>
-        <p class="lead">Find premium rentals across Cyprus &mdash; curated villas, coastal apartments, and long-term homes for those making the island their base.</p>
+<section class="hero" aria-label="Hero carousel">
+  <div class="swiper hero-swiper">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">
+        <img src="hero-beachfront-cyprus-rental.webp" alt="Modern interior with sea view" width="1920" height="1080" loading="eager">
       </div>
-      <div class="hero__visual">
-        <div class="hero__visual-card">
-          <div class="hero__visual-img">&#127958;<span class="hero__visual-badge">Prime Exclusive</span></div>
-          <div class="hero__visual-body">
-            <div class="hero__visual-location">Limassol &middot; Germasogeia</div>
-            <div class="hero__visual-title">Seafront Villa with Private Pool</div>
-            <div class="hero__visual-meta">
-              <span class="hero__visual-price">&euro;6,500 <span>/month</span></span>
-              <span class="hero__visual-details">4 bed &middot; 3 bath &middot; 280m&sup2;</span>
-            </div>
-          </div>
-        </div>
+      <div class="swiper-slide">
+        <img src="hero-cyprus-seafront-villa-limassol.webp" alt="Family terrace and pool with sea view" width="1920" height="1080" loading="lazy">
       </div>
+      <div class="swiper-slide">
+        <img src="rental-cyprus-greece-luxury.webp" alt="Sea-view terrace and balcony" width="1920" height="1080" loading="lazy">
+      </div>
+    </div>
+    <div class="swiper-button-next" aria-label="Next slide"></div>
+    <div class="swiper-button-prev" aria-label="Previous slide"></div>
+    <div class="swiper-pagination"></div>
+  </div>
+  <div class="hero__overlay" aria-hidden="true">
+    <div class="hero__copy">
+      <h1 class="hero__headline">Discover Premium Rentals in <span class="accent">Cyprus</span></h1>
+      <p class="hero__subheadline">Luxury villas, seafront apartments, and long-term homes — short stays or extended bases in Limassol, Paphos, and beyond.</p>
     </div>
   </div>
 </section>
 
-<div class="filter-bar">
-  <div class="filter-bar__inner">
-    <button class="filter-btn active" data-filter="all">All</button>
-    <button class="filter-btn" data-filter="short">Short Stay</button>
-    <button class="filter-btn" data-filter="long">Long Term</button>
-    <div class="filter-divider"></div>
-    <button class="filter-btn" data-filter="villa">Villa</button>
-    <button class="filter-btn" data-filter="apartment">Apartment</button>
-    <button class="filter-btn" data-filter="house">House</button>
-    <div class="filter-divider"></div>
-    <button class="filter-btn" data-filter="limassol">Limassol</button>
-    <button class="filter-btn" data-filter="paphos">Paphos</button>
-    <button class="filter-btn" data-filter="nicosia">Nicosia</button>
-    <button class="filter-btn" data-filter="larnaca">Larnaca</button>
+<div class="hero-search-wrap">
+  <div class="hero-search">
+    <form class="hero-search__form" action="#listings" method="get" role="search">
+      <div class="hero-search__field">
+        <label for="search-location">Location</label>
+        <select id="search-location" name="location" aria-label="Location">
+          <option value="">All</option>
+          <option value="limassol">Limassol</option>
+          <option value="paphos">Paphos</option>
+          <option value="nicosia">Nicosia</option>
+          <option value="larnaca">Larnaca</option>
+        </select>
+      </div>
+      <div class="hero-search__field">
+        <label for="search-type">Type</label>
+        <select id="search-type" name="type" aria-label="Property type">
+          <option value="">All</option>
+          <option value="villa">Villa</option>
+          <option value="apartment">Apartment</option>
+          <option value="house">House</option>
+        </select>
+      </div>
+      <div class="hero-search__field">
+        <label for="search-checkin">Check-in</label>
+        <input type="date" id="search-checkin" name="checkin" aria-label="Check-in date">
+      </div>
+      <div class="hero-search__field">
+        <label for="search-checkout">Check-out</label>
+        <input type="date" id="search-checkout" name="checkout" aria-label="Check-out date">
+      </div>
+      <div class="hero-search__field">
+        <label for="search-guests">Guests / Beds</label>
+        <select id="search-guests" name="guests" aria-label="Guests or beds">
+          <option value="">Any</option>
+          <option value="1-2">1–2</option>
+          <option value="3-4">3–4</option>
+          <option value="5+">5+</option>
+        </select>
+      </div>
+      <div class="hero-search__submit">
+        <button type="submit" class="btn">Search Rentals →</button>
+      </div>
+    </form>
   </div>
 </div>
 
@@ -515,8 +551,21 @@ p { margin-bottom: 16px; color: var(--text-secondary); font-size: 1rem; line-hei
   </div>
 </footer>
 
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script>
 document.addEventListener('DOMContentLoaded', () => {
+  const heroSwiper = new Swiper('.hero-swiper', {
+    loop: true,
+    autoplay: { delay: 5500, disableOnInteraction: false },
+    effect: 'fade',
+    fadeEffect: { crossFade: true },
+    speed: 800,
+    pagination: { el: '.swiper-pagination', clickable: true },
+    navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' },
+    grabCursor: true,
+    a11y: { prevSlideMessage: 'Previous slide', nextSlideMessage: 'Next slide' }
+  });
+
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry, i) => {
       if (entry.isIntersecting) {
@@ -549,29 +598,10 @@ document.addEventListener('DOMContentLoaded', () => {
   const nav = document.querySelector('.nav');
   if (hamburger) hamburger.addEventListener('click', () => nav.classList.toggle('mobile-open'));
 
-  const filterBtns = document.querySelectorAll('.filter-btn');
-  const cards = document.querySelectorAll('.rental-card');
-  const countEl = document.getElementById('listingCount');
-  filterBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-      filterBtns.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      const filter = btn.dataset.filter;
-      let visible = 0;
-      cards.forEach(card => {
-        const matches = filter === 'all' || card.dataset.type === filter || card.dataset.location === filter || (card.dataset.term || '').includes(filter);
-        card.style.display = matches ? '' : 'none';
-        if (matches) visible++;
-      });
-      countEl.textContent = visible;
-    });
-  });
-
   document.querySelectorAll('.area-card[data-area]').forEach(card => {
     card.addEventListener('click', (e) => {
       e.preventDefault();
-      const btn = document.querySelector(`.filter-btn[data-filter="${card.dataset.area}"]`);
-      if (btn) { btn.click(); document.getElementById('listings').scrollIntoView({ behavior: 'smooth' }); }
+      document.getElementById('listings').scrollIntoView({ behavior: 'smooth' });
     });
   });
 });
