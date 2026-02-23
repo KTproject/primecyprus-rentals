@@ -3,130 +3,863 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Prime Cyprus Rentals</title>
-  <!-- Your existing CSS links, meta tags, etc. go here -->
+  <title>Prime Cyprus Rentals — Premium Rentals Across Cyprus</title>
+  <meta name="description" content="Find premium rentals across Cyprus. Villas, apartments and houses for short stays, long term lets, and relocation. Limassol, Paphos, Nicosia, Larnaca and beyond.">
+  <meta name="keywords" content="Cyprus rentals, rent apartment Cyprus, villa rental Cyprus, Limassol rental, Paphos rental, long term rental Cyprus, short term rental Cyprus, expat rental Cyprus">
+  <link rel="canonical" href="https://rentals.primecyprus.xyz/">
+  <meta property="og:title" content="Prime Cyprus Rentals — Premium Rentals Across Cyprus">
+  <meta property="og:description" content="A week, a season, or a new chapter. Premium rentals across Cyprus.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://rentals.primecyprus.xyz">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"RealEstateAgent","name":"Prime Cyprus Rentals","description":"Premium rental listings across Cyprus.","url":"https://rentals.primecyprus.xyz","parentOrganization":{"@type":"Organization","name":"Prime Cyprus","url":"https://primecyprus.xyz"}}</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+
+:root {
+  --bg-primary: #f7f3ee;
+  --bg-secondary: #ede8df;
+  --bg-card: #ffffff;
+  --text-primary: #1a1f2e;
+  --text-secondary: #4a5568;
+  --text-muted: #8896a8;
+  --copper: #b87333;
+  --copper-light: #d4935a;
+  --copper-glow: rgba(184,115,51,0.1);
+  --navy: #1a2744;
+  --gold: #d4a853;
+  --border: rgba(26,31,46,0.1);
+  --border-copper: rgba(184,115,51,0.25);
+  --shadow-sm: 0 2px 12px rgba(26,31,46,0.07);
+  --shadow-md: 0 8px 32px rgba(26,31,46,0.12);
+  --shadow-lg: 0 24px 64px rgba(26,31,46,0.2);
+  --font-display: 'Playfair Display', Georgia, serif;
+  --font-body: 'DM Sans', -apple-system, sans-serif;
+  --max-width: 1200px;
+  --transition: 0.3s cubic-bezier(0.4,0,0.2,1);
+  --nav-h: 72px;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+body { font-family: var(--font-body); background: var(--bg-primary); color: var(--text-primary); line-height: 1.7; font-size: 16px; overflow-x: hidden; }
+a { color: var(--copper); text-decoration: none; transition: var(--transition); }
+a:hover { color: var(--navy); }
+img { max-width: 100%; height: auto; display: block; }
+.container { max-width: var(--max-width); margin: 0 auto; padding: 0 24px; }
+.section { padding: 80px 0; }
+.section--alt { background: var(--bg-secondary); }
+
+h1,h2,h3,h4 { font-family: var(--font-display); font-weight: 700; line-height: 1.15; letter-spacing: -0.025em; color: var(--text-primary); }
+h1 { font-size: clamp(2.6rem, 5vw, 4rem); }
+h2 { font-size: clamp(2rem, 4vw, 2.8rem); margin-bottom: 20px; }
+h3 { font-size: clamp(1.2rem, 2vw, 1.5rem); margin-bottom: 12px; }
+p { margin-bottom: 16px; color: var(--text-secondary); font-size: 1rem; line-height: 1.75; }
+.lead { font-size: 1.1rem; line-height: 1.85; color: var(--text-secondary); max-width: 600px; }
+.section-label { font-family: var(--font-body); font-size: 0.72rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--copper); margin-bottom: 14px; display: block; }
+
+.btn { display: inline-flex; align-items: center; gap: 8px; padding: 14px 30px; font-family: var(--font-body); font-size: 0.9rem; font-weight: 700; border: none; border-radius: 6px; cursor: pointer; transition: var(--transition); text-decoration: none; }
+.btn--primary { background: var(--navy); color: #fff; }
+.btn--primary:hover { background: #243360; color: #fff; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(26,39,68,0.2); }
+.btn--copper { background: var(--copper); color: #fff; }
+.btn--copper:hover { background: var(--copper-light); color: #fff; transform: translateY(-2px); }
+.btn--sm { padding: 9px 20px; font-size: 0.82rem; }
+
+/* ==============================
+   NAV — logo left, hamburger right
+   ============================== */
+.nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+  background: rgba(10,18,30,0.92);
+  backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255,255,255,0.07);
+  transition: var(--transition);
+}
+.nav__inner {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 24px;
+  height: var(--nav-h);
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.nav__logo { display: flex; flex-direction: column; gap: 2px; text-decoration: none; flex-shrink: 0; }
+.nav__logo-name { font-family: var(--font-display); font-size: 1.3rem; font-weight: 700; color: #f1f5f9; line-height: 1; display: flex; align-items: center; gap: 7px; }
+.nav__logo-name .accent { color: var(--gold); }
+.nav__logo-sub { font-size: 0.57rem; font-weight: 700; letter-spacing: 0.28em; text-transform: uppercase; color: var(--gold); line-height: 1; padding-left: 2px; }
+
+.nav__hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 4px; flex-shrink: 0; }
+.nav__hamburger span { display: block; width: 22px; height: 2px; background: #f1f5f9; transition: var(--transition); }
+
+/* Mobile search drawer */
+.nav__mobile-search {
+  display: none;
+  padding: 12px 24px 16px;
+  background: rgba(10,18,30,0.98);
+  border-top: 1px solid rgba(255,255,255,0.07);
+}
+.mobile-search-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 10px; }
+.nav__mobile-search select,
+.nav__mobile-search input {
+  width: 100%; padding: 10px 14px;
+  background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.12); border-radius: 8px;
+  color: #f1f5f9; font-family: var(--font-body); font-size: 0.85rem; outline: none;
+}
+.nav__mobile-search select option { background: #1a2744; }
+.mobile-search-btn {
+  width: 100%; padding: 11px; background: var(--gold); border: none; border-radius: 8px;
+  font-family: var(--font-body); font-size: 0.85rem; font-weight: 700; color: #1a1f2e; cursor: pointer;
+}
+
+/* ==============================
+   HERO CAROUSEL — full viewport
+   ============================== */
+.hero {
+  position: relative;
+  height: 100vh;
+  min-height: 600px;
+  overflow: hidden;
+}
+.hero__slides { position: absolute; inset: 0; }
+.hero__slide {
+  position: absolute; inset: 0;
+  opacity: 0;
+  transition: opacity 1.4s ease-in-out;
+  background-size: cover;
+  background-position: center;
+}
+.hero__slide.active { opacity: 1; }
+/* Gradient fallbacks — shows if images not loaded */
+.hero__slide:nth-child(1) { background-color: #0d3d5c; }
+.hero__slide:nth-child(2) { background-color: #1a3a2a; }
+.hero__slide:nth-child(3) { background-color: #2d1a4a; }
+
+/* Dual-layer overlay: nav readability top + text readability bottom */
+.hero__overlay {
+  position: absolute; inset: 0; z-index: 1;
+  background: linear-gradient(
+    to bottom,
+    rgba(10,18,30,0.5) 0%,
+    rgba(10,18,30,0.05) 30%,
+    rgba(10,18,30,0.05) 50%,
+    rgba(10,18,30,0.55) 72%,
+    rgba(10,18,30,0.80) 100%
+  );
+}
+
+/* Content sits bottom-left over overlay */
+.hero__content {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  z-index: 2;
+  padding-bottom: 88px;
+}
+.hero__eyebrow {
+  display: inline-flex; align-items: center; gap: 10px;
+  font-size: 0.7rem; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold);
+  margin-bottom: 18px;
+}
+.hero__eyebrow::before { content: ''; width: 28px; height: 1.5px; background: var(--gold); flex-shrink: 0; }
+
+.hero__content h1 {
+  color: #fff;
+  font-size: clamp(2.8rem, 5.5vw, 5rem);
+  margin-bottom: 16px;
+  text-shadow: 0 2px 24px rgba(0,0,0,0.35);
+  max-width: 680px;
+}
+.hero__content h1 em { font-style: italic; color: var(--gold); }
+.hero__subline {
+  color: rgba(255,255,255,0.78);
+  font-size: 1.1rem;
+  line-height: 1.8;
+  max-width: 500px;
+  text-shadow: 0 1px 10px rgba(0,0,0,0.4);
+}
+
+/* Dots */
+.hero__dots {
+  position: absolute; bottom: 36px; right: 36px; z-index: 3;
+  display: flex; gap: 8px; align-items: center;
+}
+.hero__dot {
+  width: 8px; height: 8px; border-radius: 50%;
+  background: rgba(255,255,255,0.35); border: none; cursor: pointer;
+  transition: var(--transition); padding: 0;
+}
+.hero__dot.active { background: var(--gold); width: 26px; border-radius: 4px; }
+
+/* Slide counter */
+.hero__counter {
+  position: absolute; bottom: 34px; left: 36px; z-index: 3;
+  font-size: 0.7rem; font-weight: 600; letter-spacing: 0.12em; color: rgba(255,255,255,0.4);
+}
+.hero__counter strong { color: rgba(255,255,255,0.8); }
+
+/* ==============================
+   SEARCH BAR — floating below hero
+   ============================== */
+.search-section {
+  position: relative; z-index: 10;
+  margin-top: -44px;
+}
+.search-card {
+  background: var(--bg-card);
+  border-radius: 16px;
+  box-shadow: var(--shadow-lg);
+  padding: 6px;
+  display: flex;
+  align-items: stretch;
+  border: 1px solid rgba(255,255,255,0.8);
+}
+.search-field {
+  flex: 1;
+  padding: 16px 20px;
+  border-right: 1px solid var(--border);
+  display: flex; flex-direction: column; gap: 5px;
+  border-radius: 10px;
+  transition: var(--transition);
+  min-width: 0;
+  cursor: pointer;
+}
+.search-field:hover { background: var(--bg-primary); }
+.search-field:last-of-type { border-right: none; }
+.search-field__label { font-size: 0.62rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-primary); }
+.search-field select,
+.search-field input {
+  background: transparent; border: none; outline: none;
+  font-family: var(--font-body); font-size: 0.9rem; color: var(--text-secondary);
+  padding: 0; cursor: pointer; width: 100%;
+}
+.search-field select option { background: #fff; }
+.search-submit {
+  flex-shrink: 0;
+  padding: 0 28px;
+  background: var(--navy); color: #fff;
+  border: none; border-radius: 10px;
+  font-family: var(--font-body); font-size: 0.88rem; font-weight: 700;
+  cursor: pointer; display: flex; align-items: center; gap: 8px;
+  transition: var(--transition); margin: 4px; white-space: nowrap;
+}
+.search-submit:hover { background: #243360; transform: translateY(-1px); }
+.search-submit svg { width: 16px; height: 16px; fill: none; stroke: #fff; stroke-width: 2.5; stroke-linecap: round; }
+
+/* ==============================
+   LISTINGS GRID
+   ============================== */
+.listings-section { padding: 56px 0 80px; }
+.listings-header { display: flex; align-items: flex-end; justify-content: space-between; margin-bottom: 32px; }
+.listings-count { font-size: 0.85rem; color: var(--text-muted); font-weight: 500; }
+.listings-count span { font-weight: 700; color: var(--text-primary); }
+.listings-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+
+/* ==============================
+   RENTAL CARD
+   ============================== */
+.rental-card {
+  background: var(--bg-card); border: 1px solid var(--border);
+  border-radius: 16px; overflow: hidden;
+  transition: var(--transition); box-shadow: var(--shadow-sm);
+  display: flex; flex-direction: column;
+}
+.rental-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-md); border-color: var(--border-copper); }
+
+.rental-card__img {
+  position: relative; height: 220px;
+  background: linear-gradient(135deg, #c5d8ea, #8ab4cc);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 3rem; overflow: hidden;
+}
+.rental-card__img img { width: 100%; height: 100%; object-fit: cover; position: absolute; inset: 0; }
+
+.rental-card__badge {
+  position: absolute; top: 12px; left: 12px; z-index: 1;
+  background: var(--copper); color: #fff;
+  font-size: 0.6rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
+  padding: 4px 10px; border-radius: 100px;
+}
+.rental-card__badge--exclusive { background: var(--navy); }
+
+.rental-card__type-tag {
+  position: absolute; top: 12px; z-index: 1;
+  background: rgba(255,255,255,0.95); color: var(--text-primary);
+  font-size: 0.6rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
+  padding: 4px 10px; border-radius: 100px;
+  right: 48px; /* make room for share button */
+}
+
+/* Share button */
+.rental-card__share {
+  position: absolute; top: 10px; right: 10px; z-index: 2;
+  width: 32px; height: 32px; border-radius: 50%;
+  background: rgba(255,255,255,0.92); border: none; cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  transition: var(--transition); color: var(--text-secondary);
+}
+.rental-card__share:hover { background: #fff; transform: scale(1.1); color: var(--copper); }
+.rental-card__share svg { width: 14px; height: 14px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+
+/* Toast */
+.share-toast {
+  position: fixed; bottom: 32px; left: 50%;
+  transform: translateX(-50%) translateY(12px);
+  background: var(--navy); color: #fff;
+  font-family: var(--font-body); font-size: 0.85rem; font-weight: 600;
+  padding: 12px 24px; border-radius: 100px; box-shadow: var(--shadow-md);
+  opacity: 0; pointer-events: none; transition: opacity 0.3s, transform 0.3s;
+  z-index: 9999; white-space: nowrap;
+}
+.share-toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+
+.rental-card__body { padding: 20px; flex: 1; display: flex; flex-direction: column; }
+.rental-card__location { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--copper); margin-bottom: 6px; }
+.rental-card__title { font-family: var(--font-display); font-size: 1.2rem; font-weight: 700; color: var(--text-primary); margin-bottom: 8px; line-height: 1.25; }
+.rental-card__desc { font-size: 0.85rem; color: var(--text-muted); line-height: 1.65; margin-bottom: 16px; flex: 1; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+.rental-card__features { display: flex; gap: 10px; margin-bottom: 16px; padding-bottom: 16px; border-bottom: 1px solid var(--border); flex-wrap: wrap; }
+.rental-card__feature { display: flex; align-items: center; gap: 4px; font-size: 0.75rem; font-weight: 500; color: var(--text-secondary); }
+.rental-card__footer { display: flex; align-items: center; justify-content: space-between; }
+.rental-card__price { font-family: var(--font-display); font-size: 1.25rem; font-weight: 700; color: var(--navy); }
+.rental-card__price-period { font-family: var(--font-body); font-size: 0.72rem; font-weight: 400; color: var(--text-muted); margin-left: 2px; }
+.rental-card__cta { font-size: 0.78rem; font-weight: 700; color: var(--copper); display: inline-flex; align-items: center; gap: 4px; padding: 7px 14px; border: 1.5px solid var(--border-copper); border-radius: 5px; transition: var(--transition); }
+.rental-card__cta:hover { background: var(--navy); border-color: var(--navy); color: #fff; }
+.listings-empty { grid-column: 1 / -1; text-align: center; padding: 60px; color: var(--text-muted); }
+
+/* AREAS */
+.areas-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 36px; }
+.area-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; padding: 24px 20px; text-align: center; cursor: pointer; transition: var(--transition); text-decoration: none; display: block; }
+.area-card:hover { border-color: var(--border-copper); box-shadow: var(--shadow-md); transform: translateY(-3px); color: var(--text-primary); }
+.area-card__emoji { font-size: 2rem; margin-bottom: 10px; }
+.area-card__name { font-family: var(--font-display); font-size: 1.1rem; font-weight: 700; color: var(--text-primary); margin-bottom: 5px; }
+.area-card__count { font-size: 0.78rem; color: var(--text-muted); font-weight: 500; }
+
+/* CROSSSELL */
+.crosssell { background: var(--copper-glow); border: 1px solid var(--border-copper); border-radius: 16px; padding: 48px; display: grid; grid-template-columns: 1fr auto; gap: 32px; align-items: center; }
+.crosssell h3 { font-size: 1.5rem; margin-bottom: 10px; }
+.crosssell p { margin-bottom: 0; max-width: 520px; }
+
+/* FAQ */
+.faq-list { max-width: 780px; margin: 40px auto 0; }
+.faq-item { border-bottom: 1px solid var(--border); }
+.faq-question { width: 100%; display: flex; align-items: center; justify-content: space-between; padding: 22px 0; font-family: var(--font-body); font-size: 1rem; font-weight: 600; color: var(--text-primary); background: none; border: none; cursor: pointer; text-align: left; transition: var(--transition); }
+.faq-question:hover { color: var(--copper); }
+.faq-icon { flex-shrink: 0; width: 28px; height: 28px; border-radius: 50%; border: 1.5px solid var(--border); display: flex; align-items: center; justify-content: center; font-size: 1rem; color: var(--copper); transition: var(--transition); }
+.faq-item.open .faq-icon { transform: rotate(45deg); background: var(--copper-glow); border-color: var(--copper); }
+.faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.35s ease-out; }
+.faq-answer__inner { padding: 0 0 22px; color: var(--text-secondary); font-size: 0.93rem; line-height: 1.8; }
+
+/* FOOTER */
+.footer { background: var(--navy); padding: 48px 0 28px; }
+.footer__inner { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px; margin-bottom: 40px; }
+.footer__brand-name { font-family: var(--font-display); font-size: 1.4rem; font-weight: 700; color: #f1f5f9; display: flex; flex-direction: column; gap: 3px; margin-bottom: 12px; }
+.footer__brand-name .accent { color: var(--gold); }
+.footer__brand-sub { font-size: 0.6rem; font-weight: 700; letter-spacing: 0.25em; text-transform: uppercase; color: var(--gold); }
+.footer__brand p { font-size: 0.85rem; color: rgba(255,255,255,0.45); max-width: 280px; margin-top: 8px; }
+.footer h4 { font-family: var(--font-body); font-size: 0.72rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.35); margin-bottom: 16px; }
+.footer__links { list-style: none; }
+.footer__links li { margin-bottom: 9px; }
+.footer__links a { font-size: 0.85rem; color: rgba(255,255,255,0.55); }
+.footer__links a:hover { color: #fff; }
+.footer__bottom { border-top: 1px solid rgba(255,255,255,0.08); padding-top: 22px; display: flex; justify-content: space-between; align-items: center; font-size: 0.76rem; color: rgba(255,255,255,0.3); }
+
+/* ANIMATIONS */
+@keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+.animate-in { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease-out, transform 0.6s ease-out; }
+.animate-in.visible { opacity: 1; transform: translateY(0); }
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+  .listings-grid { grid-template-columns: repeat(2, 1fr); }
+  .footer__inner { grid-template-columns: 1fr 1fr; }
+  .crosssell { grid-template-columns: 1fr; }
+}
+@media (max-width: 768px) {
+  .section { padding: 56px 0; }
+  .nav__hamburger { display: flex; }
+  .nav__inner { grid-template-columns: 1fr auto; }
+  .nav.mobile-open .nav__mobile-search { display: block; }
+  .hero__content h1 { font-size: clamp(2.2rem, 8vw, 3rem); }
+  .hero__counter { display: none; }
+  .search-section { margin-top: 20px; }
+  .search-card { flex-direction: column; padding: 4px; }
+  .search-field { border-right: none; border-bottom: 1px solid var(--border); border-radius: 8px; }
+  .search-field:last-of-type { border-bottom: none; }
+  .search-submit { margin: 4px; border-radius: 8px; justify-content: center; padding: 14px; }
+  .listings-grid { grid-template-columns: 1fr; }
+  .areas-grid { grid-template-columns: repeat(2, 1fr); }
+  .footer__inner { grid-template-columns: 1fr; gap: 28px; }
+  .footer__bottom { flex-direction: column; gap: 12px; text-align: center; }
+  .crosssell { padding: 32px; }
+  .hero__dots { bottom: 24px; right: 24px; }
+  .hero__content { padding-bottom: 68px; }
+}
+@media (max-width: 480px) { .areas-grid { grid-template-columns: 1fr; } }
+</style>
 </head>
 <body>
 
-  <!-- Your existing nav bar / header here -->
-  <nav>
-    <div class="logo">♦ Prime Cyprus Rentals</div>
-    <!-- Your nav items -->
-  </nav>
+<!-- NAV -->
+<nav class="nav" role="navigation">
+  <div class="nav__inner">
+    <a href="/" class="nav__logo">
+      <span class="nav__logo-name">&#9670; Prime <span class="accent">Cyprus</span></span>
+      <span class="nav__logo-sub">Rentals</span>
+    </a>
 
-  <!-- Hero section (keep your carousel or background) -->
-  <section class="hero">
-    <h1>Discover Premium Rentals in Cyprus</h1>
-    <p>Luxury villas, seafront apartments, and long-term homes — short stays or extended bases in Limassol, Paphos, and beyond.</p>
-  </section>
-
-  <!-- Search bar (keep as is) -->
-  <div class="search-bar">
-    <div class="search-field">
-      <label>Location</label>
-      <select>
-        <option>All</option>
-        <option>Limassol</option>
-        <option>Paphos</option>
-        <option>Nicosia</option>
-        <option>Larnaca</option>
-      </select>
-    </div>
-    <div class="search-field">
-      <label>Type</label>
-      <select>
-        <option>All</option>
-        <option>Villa</option>
-        <option>Apartment</option>
-        <option>House</option>
-      </select>
-    </div>
-    <div class="search-field">
-      <label>Check-in</label>
-      <input type="date">
-    </div>
-    <div class="search-field">
-      <label>Check-out</label>
-      <input type="date">
-    </div>
-    <div class="search-field">
-      <label>Guests / Beds</label>
-      <select>
-        <option>Any</option>
-        <option>1-2</option>
-        <option>3-4</option>
-        <option>5+</option>
-      </select>
-    </div>
-    <button class="search-btn">Search Rentals →</button>
+    <button class="nav__hamburger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
   </div>
 
-  <section class="listings-section" id="listings">
+  <div class="nav__mobile-search">
+    <div class="mobile-search-grid">
+      <select id="ms-loc"><option value="">Location</option><option value="limassol">Limassol</option><option value="paphos">Paphos</option><option value="nicosia">Nicosia</option><option value="larnaca">Larnaca</option><option value="protaras">Protaras</option></select>
+      <select id="ms-type"><option value="">Any type</option><option value="villa">Villa</option><option value="apartment">Apartment</option><option value="house">House</option></select>
+    </div>
+    <button class="mobile-search-btn" id="mobileSearchBtn">Search Rentals &rarr;</button>
+  </div>
+</nav>
+
+<!-- HERO CAROUSEL -->
+<section class="hero" aria-label="Hero">
+  <div class="hero__slides" id="heroSlides">
+    <div class="hero__slide active" style="background-image: url('hero-beachfront-cyprus-rental.webp');"></div>
+    <div class="hero__slide" style="background-image: url('hero-cyprus-seafront-villa-limassol.webp');"></div>
+    <div class="hero__slide" style="background-image: url('rental-cyprus-greece-luxury.webp');"></div>
+  </div>
+  <div class="hero__overlay"></div>
+
+  <div class="hero__content">
     <div class="container">
-      <div class="listings-header">
-        <div>
-          <span class="section-label">Available Now</span>
-          <h2>Featured Rentals</h2>
+      <div class="hero__eyebrow">Premium Rentals &middot; Cyprus</div>
+      <h1>A week, a season,<br>or a new <em>chapter.</em></h1>
+      <p class="hero__subline">Curated villas, coastal apartments, and long-term homes &mdash; for those making Cyprus their base.</p>
+    </div>
+  </div>
+
+  <div class="hero__counter"><strong id="slideNum">1</strong> / 3</div>
+
+  <div class="hero__dots" role="tablist">
+    <button class="hero__dot active" data-slide="0" aria-label="Slide 1"></button>
+    <button class="hero__dot" data-slide="1" aria-label="Slide 2"></button>
+    <button class="hero__dot" data-slide="2" aria-label="Slide 3"></button>
+  </div>
+</section>
+
+<!-- SEARCH BAR -->
+<div class="search-section">
+  <div class="container">
+    <div class="search-card">
+      <div class="search-field">
+        <span class="search-field__label">Location</span>
+        <select id="s-loc"><option value="">Anywhere in Cyprus</option><option value="limassol">Limassol</option><option value="paphos">Paphos</option><option value="nicosia">Nicosia</option><option value="larnaca">Larnaca</option><option value="protaras">Protaras</option></select>
+      </div>
+      <div class="search-field">
+        <span class="search-field__label">Property type</span>
+        <select id="s-type"><option value="">Any type</option><option value="villa">Villa</option><option value="apartment">Apartment</option><option value="house">House</option></select>
+      </div>
+      <div class="search-field">
+        <span class="search-field__label">Duration</span>
+        <select id="s-term"><option value="">Short or long term</option><option value="short">Short stay</option><option value="long">Long term</option></select>
+      </div>
+      <div class="search-field">
+        <span class="search-field__label">Guests</span>
+        <input type="text" id="s-guests" placeholder="Any">
+      </div>
+      <button class="search-submit" id="mainSearchBtn">
+        <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+        Search
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- LISTINGS -->
+<section class="listings-section" id="listings">
+  <div class="container">
+    <div class="listings-header">
+      <div>
+        <span class="section-label">Available Now</span>
+        <h2>Featured Rentals</h2>
+      </div>
+      <div class="listings-count">Showing <span id="listingCount">6</span> properties</div>
+    </div>
+    <div class="listings-grid" id="listingsGrid">
+
+      <div class="rental-card animate-in" data-type="villa" data-location="limassol" data-term="long" data-slug="seafront-villa-infinity-pool-limassol">
+        <div class="rental-card__img">
+          &#127754;
+          <span class="rental-card__badge rental-card__badge--exclusive">Prime Exclusive</span>
+          <span class="rental-card__type-tag">Villa</span>
+          <button class="rental-card__share" aria-label="Copy link"><svg viewBox="0 0 24 24"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="M8.59 13.51l6.83 3.98M15.41 6.51l-6.82 3.98"/></svg></button>
         </div>
-        <div class="listings-count">Showing <span id="listingCount">0</span> properties</div>
+        <div class="rental-card__body">
+          <div class="rental-card__location">Limassol &middot; Agios Tychonas</div>
+          <div class="rental-card__title">Seafront Villa with Infinity Pool</div>
+          <div class="rental-card__desc">Stunning 4-bedroom villa with direct sea access, private infinity pool, and panoramic Mediterranean views.</div>
+          <div class="rental-card__features">
+            <span class="rental-card__feature">&#127984; 4 bed</span>
+            <span class="rental-card__feature">&#128703; 3 bath</span>
+            <span class="rental-card__feature">&#128207; 320m&sup2;</span>
+            <span class="rental-card__feature">&#127754; Seafront</span>
+          </div>
+          <div class="rental-card__footer">
+            <div class="rental-card__price">&euro;8,500<span class="rental-card__price-period"> /month</span></div>
+            <a href="https://primecyprus.xyz/contact.html" class="rental-card__cta">Enquire &rarr;</a>
+          </div>
+        </div>
       </div>
 
-      <div class="listings-grid" id="listingsGrid">
-        <!-- Rentals from Sanity will load here -->
+      <div class="rental-card animate-in" data-type="apartment" data-location="limassol" data-term="short long" data-slug="marina-apartment-limassol-city-centre">
+        <div class="rental-card__img">
+          &#127961;
+          <span class="rental-card__badge">Available</span>
+          <span class="rental-card__type-tag">Apartment</span>
+          <button class="rental-card__share" aria-label="Copy link"><svg viewBox="0 0 24 24"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="M8.59 13.51l6.83 3.98M15.41 6.51l-6.82 3.98"/></svg></button>
+        </div>
+        <div class="rental-card__body">
+          <div class="rental-card__location">Limassol &middot; City Centre</div>
+          <div class="rental-card__title">Modern 2-Bed Marina Apartment</div>
+          <div class="rental-card__desc">Sleek apartment with marina views in the heart of Limassol. Walking distance to restaurants, beach, and business district.</div>
+          <div class="rental-card__features">
+            <span class="rental-card__feature">&#127984; 2 bed</span>
+            <span class="rental-card__feature">&#128703; 2 bath</span>
+            <span class="rental-card__feature">&#128207; 110m&sup2;</span>
+            <span class="rental-card__feature">&#9875; Marina View</span>
+          </div>
+          <div class="rental-card__footer">
+            <div class="rental-card__price">&euro;2,200<span class="rental-card__price-period"> /month</span></div>
+            <a href="https://primecyprus.xyz/contact.html" class="rental-card__cta">Enquire &rarr;</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="rental-card animate-in" data-type="villa" data-location="paphos" data-term="short long" data-slug="hillside-villa-coral-bay-paphos">
+        <div class="rental-card__img">
+          &#127807;
+          <span class="rental-card__badge rental-card__badge--exclusive">Prime Exclusive</span>
+          <span class="rental-card__type-tag">Villa</span>
+          <button class="rental-card__share" aria-label="Copy link"><svg viewBox="0 0 24 24"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="M8.59 13.51l6.83 3.98M15.41 6.51l-6.82 3.98"/></svg></button>
+        </div>
+        <div class="rental-card__body">
+          <div class="rental-card__location">Paphos &middot; Coral Bay</div>
+          <div class="rental-card__title">Hillside Villa with Sea Views</div>
+          <div class="rental-card__desc">Peaceful 3-bedroom villa surrounded by nature with sweeping Coral Bay views. Private pool and large terraces.</div>
+          <div class="rental-card__features">
+            <span class="rental-card__feature">&#127984; 3 bed</span>
+            <span class="rental-card__feature">&#128703; 2 bath</span>
+            <span class="rental-card__feature">&#128207; 200m&sup2;</span>
+            <span class="rental-card__feature">&#127944; Pool</span>
+          </div>
+          <div class="rental-card__footer">
+            <div class="rental-card__price">&euro;4,200<span class="rental-card__price-period"> /month</span></div>
+            <a href="https://primecyprus.xyz/contact.html" class="rental-card__cta">Enquire &rarr;</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="rental-card animate-in" data-type="apartment" data-location="nicosia" data-term="long" data-slug="executive-apartment-nicosia-engomi">
+        <div class="rental-card__img">
+          &#127963;
+          <span class="rental-card__badge">Available</span>
+          <span class="rental-card__type-tag">Apartment</span>
+          <button class="rental-card__share" aria-label="Copy link"><svg viewBox="0 0 24 24"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="M8.59 13.51l6.83 3.98M15.41 6.51l-6.82 3.98"/></svg></button>
+        </div>
+        <div class="rental-card__body">
+          <div class="rental-card__location">Nicosia &middot; Engomi</div>
+          <div class="rental-card__title">Executive 3-Bed in Business District</div>
+          <div class="rental-card__desc">Spacious executive apartment ideal for business professionals. Near embassies, international schools, and the CBD.</div>
+          <div class="rental-card__features">
+            <span class="rental-card__feature">&#127984; 3 bed</span>
+            <span class="rental-card__feature">&#128703; 2 bath</span>
+            <span class="rental-card__feature">&#128207; 155m&sup2;</span>
+            <span class="rental-card__feature">&#127837; Parking</span>
+          </div>
+          <div class="rental-card__footer">
+            <div class="rental-card__price">&euro;1,900<span class="rental-card__price-period"> /month</span></div>
+            <a href="https://primecyprus.xyz/contact.html" class="rental-card__cta">Enquire &rarr;</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="rental-card animate-in" data-type="house" data-location="larnaca" data-term="long" data-slug="beachside-house-mackenzie-larnaca">
+        <div class="rental-card__img">
+          &#127796;
+          <span class="rental-card__badge">Available</span>
+          <span class="rental-card__type-tag">House</span>
+          <button class="rental-card__share" aria-label="Copy link"><svg viewBox="0 0 24 24"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="M8.59 13.51l6.83 3.98M15.41 6.51l-6.82 3.98"/></svg></button>
+        </div>
+        <div class="rental-card__body">
+          <div class="rental-card__location">Larnaca &middot; Mackenzie Beach</div>
+          <div class="rental-card__title">Beachside House, 50m from Sea</div>
+          <div class="rental-card__desc">Charming detached house steps from Mackenzie beach. Garden, BBQ area, and stunning sunsets.</div>
+          <div class="rental-card__features">
+            <span class="rental-card__feature">&#127984; 3 bed</span>
+            <span class="rental-card__feature">&#128703; 2 bath</span>
+            <span class="rental-card__feature">&#128207; 145m&sup2;</span>
+            <span class="rental-card__feature">&#127958; Beach</span>
+          </div>
+          <div class="rental-card__footer">
+            <div class="rental-card__price">&euro;2,800<span class="rental-card__price-period"> /month</span></div>
+            <a href="https://primecyprus.xyz/contact.html" class="rental-card__cta">Enquire &rarr;</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="rental-card animate-in" data-type="apartment" data-location="paphos" data-term="short" data-slug="luxury-1bed-harbour-paphos">
+        <div class="rental-card__img">
+          &#9728;
+          <span class="rental-card__badge">Short Stay</span>
+          <span class="rental-card__type-tag">Apartment</span>
+          <button class="rental-card__share" aria-label="Copy link"><svg viewBox="0 0 24 24"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="M8.59 13.51l6.83 3.98M15.41 6.51l-6.82 3.98"/></svg></button>
+        </div>
+        <div class="rental-card__body">
+          <div class="rental-card__location">Paphos &middot; Kato Paphos</div>
+          <div class="rental-card__title">Luxury 1-Bed near Harbour</div>
+          <div class="rental-card__desc">Stylish serviced apartment near Paphos Harbour and the old town. Perfect for short stays or scouting your relocation.</div>
+          <div class="rental-card__features">
+            <span class="rental-card__feature">&#127984; 1 bed</span>
+            <span class="rental-card__feature">&#128703; 1 bath</span>
+            <span class="rental-card__feature">&#128207; 65m&sup2;</span>
+            <span class="rental-card__feature">&#9875; Harbour</span>
+          </div>
+          <div class="rental-card__footer">
+            <div class="rental-card__price">&euro;120<span class="rental-card__price-period"> /night</span></div>
+            <a href="https://primecyprus.xyz/contact.html" class="rental-card__cta">Enquire &rarr;</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- AREAS -->
+<section class="section section--alt" id="areas">
+  <div class="container">
+    <span class="section-label animate-in">Browse by Location</span>
+    <h2 class="animate-in">Find your ideal base.</h2>
+    <p class="lead animate-in">From cosmopolitan Limassol to the relaxed charm of Paphos &mdash; each region has its own character.</p>
+    <div class="areas-grid">
+      <a href="#listings" class="area-card animate-in" data-area="limassol"><div class="area-card__emoji">&#127750;</div><div class="area-card__name">Limassol</div><div class="area-card__count">Most cosmopolitan &middot; Business hub</div></a>
+      <a href="#listings" class="area-card animate-in" data-area="paphos"><div class="area-card__emoji">&#127963;</div><div class="area-card__name">Paphos</div><div class="area-card__count">Relaxed &middot; Large expat community</div></a>
+      <a href="#listings" class="area-card animate-in" data-area="nicosia"><div class="area-card__emoji">&#127961;</div><div class="area-card__name">Nicosia</div><div class="area-card__count">Capital &middot; Ideal for business</div></a>
+      <a href="#listings" class="area-card animate-in" data-area="larnaca"><div class="area-card__emoji">&#9992;</div><div class="area-card__name">Larnaca</div><div class="area-card__count">Airport access &middot; Growing scene</div></a>
+      <a href="#listings" class="area-card animate-in" data-area="protaras"><div class="area-card__emoji">&#127958;</div><div class="area-card__name">Protaras</div><div class="area-card__count">Beach &middot; Seasonal stays</div></a>
+      <a href="https://primecyprus.xyz" target="_blank" class="area-card animate-in"><div class="area-card__emoji">&#127968;</div><div class="area-card__name">Buy in Cyprus</div><div class="area-card__count">Properties for sale &rarr;</div></a>
+    </div>
+  </div>
+</section>
+
+<!-- CROSSSELL -->
+<section style="padding: 64px 0;">
+  <div class="container">
+    <div class="crosssell animate-in">
+      <div>
+        <span class="section-label">Relocating to Cyprus?</span>
+        <h3>More than a rental &mdash; a new chapter.</h3>
+        <p>Prime Cyprus helps digital economy professionals relocate with tax optimization, residency planning, and property investment. A rental is often the first step.</p>
+      </div>
+      <a href="https://primecyprus.xyz" class="btn btn--primary">Explore Residency &rarr;</a>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section section--alt" id="faq">
+  <div class="container">
+    <div style="text-align: center;">
+      <span class="section-label animate-in">FAQ</span>
+      <h2 class="animate-in">Common questions about renting in Cyprus.</h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item animate-in">
+        <button class="faq-question" aria-expanded="false"><span>What is the average rent in Limassol?</span><span class="faq-icon">+</span></button>
+        <div class="faq-answer"><div class="faq-answer__inner">A modern 2-bedroom apartment in central or coastal Limassol typically ranges from &euro;1,500 to &euro;3,000 per month. Luxury villas in Germasogeia or Agios Tychonas range from &euro;4,000 to &euro;10,000+ per month.</div></div>
+      </div>
+      <div class="faq-item animate-in">
+        <button class="faq-question" aria-expanded="false"><span>Can foreigners rent in Cyprus?</span><span class="faq-icon">+</span></button>
+        <div class="faq-answer"><div class="faq-answer__inner">Yes. There are no restrictions on foreigners renting in Cyprus. EU citizens can rent freely. Non-EU nationals can also rent without restrictions &mdash; a valid passport is typically required when signing a lease.</div></div>
+      </div>
+      <div class="faq-item animate-in">
+        <button class="faq-question" aria-expanded="false"><span>How long can I stay in Cyprus as a tourist?</span><span class="faq-icon">+</span></button>
+        <div class="faq-answer"><div class="faq-answer__inner">EU citizens can stay indefinitely. Non-EU nationals can stay up to 90 days within any 180-day period without a visa. Many clients use Cyprus&rsquo;s 60-day tax residency rule to structure their stays efficiently.</div></div>
+      </div>
+      <div class="faq-item animate-in">
+        <button class="faq-question" aria-expanded="false"><span>What should I check before signing a rental lease?</span><span class="faq-icon">+</span></button>
+        <div class="faq-answer"><div class="faq-answer__inner">Check that the property has a valid title deed, whether utilities are included, air conditioning provision, parking, and proximity to amenities. For long-term rentals, ensure the lease is in writing and registered with the Cyprus Land Registry.</div></div>
+      </div>
+      <div class="faq-item animate-in">
+        <button class="faq-question" aria-expanded="false"><span>What&rsquo;s the difference between short-term and long-term rental?</span><span class="faq-icon">+</span></button>
+        <div class="faq-answer"><div class="faq-answer__inner">Short-term rentals (days to months) are typically furnished and serviced. Long-term rentals (6 months+) are usually unfurnished or semi-furnished and significantly cheaper per month. Many relocating clients start short-term while searching for their long-term home.</div></div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- Your footer or other sections here -->
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer__inner">
+      <div class="footer__brand">
+        <div class="footer__brand-name">&#9670; Prime <span class="accent">Cyprus</span><span class="footer__brand-sub">Rentals</span></div>
+        <p>Premium rental listings across Cyprus for short stays, long-term lets, and those making the island home.</p>
+      </div>
+      <div>
+        <h4>Browse</h4>
+        <ul class="footer__links">
+          <li><a href="#listings">All Rentals</a></li>
+          <li><a href="#areas">Browse by Area</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Prime Cyprus</h4>
+        <ul class="footer__links">
+          <li><a href="https://primecyprus.xyz">Main Site</a></li>
+          <li><a href="https://primecyprus.xyz/residency-tax.html">Residency &amp; Tax</a></li>
+          <li><a href="https://primecyprus.xyz/property.html">Property for Sale</a></li>
+          <li><a href="https://primecyprus.xyz/contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>&copy; 2026 Prime Cyprus. All rights reserved.</span>
+      <span>General information only. Not legal or financial advice.</span>
+    </div>
+  </div>
+</footer>
 
-  <script type="module">
-    import { client } from './lib/sanity.ts'
+<div class="share-toast" id="shareToast">&#10003;&nbsp; Link copied</div>
 
-    console.log('Sanity script loaded');
-    console.log('Client:', client);
+<script>
+document.addEventListener('DOMContentLoaded', () => {
 
-    async function loadRentals() {
-      console.log('Fetching rentals...');
-
-      const query = `*[_type == "rental"] | order(_createdAt desc) [0..5] {
-        title,
-        location,
-        priceMonthly,
-        "imageUrl": images[0].asset->url,
-        description
-      }`;
-
-      try {
-        const rentals = await client.fetch(query);
-        console.log('Sanity data:', rentals);
-
-        const count = document.getElementById('listingCount');
-        if (count) count.textContent = rentals.length;
-
-        const grid = document.getElementById('listingsGrid');
-        if (grid) {
-          grid.innerHTML = rentals.map(r => `
-            <div class="rental-card animate-in">
-              <div class="rental-card__body">
-                <div class="rental-card__location">${r.location || 'N/A'}</div>
-                <div class="rental-card__title">${r.title || 'No title'}</div>
-                <div class="rental-card__desc">${r.description ? r.description.substring(0, 100) + '...' : 'No desc'}</div>
-                <div class="rental-card__price">€${r.priceMonthly || 'N/A'}/month</div>
-                <a href="https://primecyprus.xyz/contact.html" class="rental-card__cta">Enquire →</a>
-              </div>
-            </div>
-          `).join('');
-          console.log('Rendered', rentals.length, 'rentals');
-        } else {
-          console.error('No #listingsGrid found');
-        }
-      } catch (err) {
-        console.error('Fetch error:', err);
+  // Scroll animations
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((e, i) => {
+      if (e.isIntersecting) {
+        setTimeout(() => e.target.classList.add('visible'), i * 80);
+        io.unobserve(e.target);
       }
-    }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+  document.querySelectorAll('.animate-in').forEach(el => io.observe(el));
 
-    document.addEventListener('DOMContentLoaded', loadRentals);
-  </script>
+  // Hero carousel
+  const slides = document.querySelectorAll('.hero__slide');
+  const dots   = document.querySelectorAll('.hero__dot');
+  const slideNum = document.getElementById('slideNum');
+  let cur = 0, timer;
 
+  function goTo(n) {
+    slides[cur].classList.remove('active');
+    dots[cur].classList.remove('active');
+    cur = (n + slides.length) % slides.length;
+    slides[cur].classList.add('active');
+    dots[cur].classList.add('active');
+    if (slideNum) slideNum.textContent = cur + 1;
+  }
+  function startAuto() { timer = setInterval(() => goTo(cur + 1), 5500); }
+  dots.forEach(d => d.addEventListener('click', () => { clearInterval(timer); goTo(+d.dataset.slide); startAuto(); }));
+  startAuto();
+
+  // FAQ
+  document.querySelectorAll('.faq-question').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.parentElement;
+      const ans  = item.querySelector('.faq-answer');
+      const open = item.classList.contains('open');
+      document.querySelectorAll('.faq-item.open').forEach(o => {
+        o.classList.remove('open');
+        o.querySelector('.faq-answer').style.maxHeight = null;
+        o.querySelector('.faq-question').setAttribute('aria-expanded','false');
+      });
+      if (!open) {
+        item.classList.add('open');
+        ans.style.maxHeight = ans.scrollHeight + 'px';
+        btn.setAttribute('aria-expanded','true');
+      }
+    });
+  });
+
+  // Mobile nav
+  const hamburger = document.querySelector('.nav__hamburger');
+  const nav = document.querySelector('.nav');
+  if (hamburger) hamburger.addEventListener('click', () => nav.classList.toggle('mobile-open'));
+
+  const cards = document.querySelectorAll('.rental-card');
+  const countEl = document.getElementById('listingCount');
+
+  function applyFilter(f) {
+    let n = 0;
+    cards.forEach(c => {
+      const show = f === 'all'
+        || c.dataset.type === f
+        || c.dataset.location === f
+        || (c.dataset.term||'').includes(f);
+      c.style.display = show ? '' : 'none';
+      if (show) n++;
+    });
+    if (countEl) countEl.textContent = n;
+  }
+
+  // Search (floating bar) — applies filter + scrolls to listings
+  function doSearch(loc, type, term) {
+    const filterVal = loc || type || term || 'all';
+    applyFilter(filterVal);
+    document.getElementById('listings').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
+  document.getElementById('mainSearchBtn').addEventListener('click', () =>
+    doSearch(document.getElementById('s-loc').value, document.getElementById('s-type').value, document.getElementById('s-term').value));
+  document.getElementById('mobileSearchBtn').addEventListener('click', () => {
+    nav.classList.remove('mobile-open');
+    doSearch(document.getElementById('ms-loc').value, document.getElementById('ms-type').value, '');
+  });
+
+  // Area cards — filter by area and scroll to listings
+  document.querySelectorAll('.area-card[data-area]').forEach(c => {
+    c.addEventListener('click', e => {
+      e.preventDefault();
+      applyFilter(c.dataset.area);
+      document.getElementById('listings').scrollIntoView({ behavior:'smooth' });
+    });
+  });
+
+  // Share buttons
+  const toast = document.getElementById('shareToast');
+  let toastT;
+  function showToast() {
+    clearTimeout(toastT);
+    toast.classList.add('show');
+    toastT = setTimeout(() => toast.classList.remove('show'), 2400);
+  }
+  function copyText(txt) {
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(txt).then(showToast).catch(() => { copyFallback(txt); showToast(); });
+    } else { copyFallback(txt); showToast(); }
+  }
+  function copyFallback(txt) {
+    const ta = document.createElement('textarea');
+    ta.value = txt; ta.style.cssText = 'position:fixed;opacity:0';
+    document.body.appendChild(ta); ta.select(); document.execCommand('copy');
+    document.body.removeChild(ta);
+  }
+
+  document.querySelectorAll('.rental-card__share').forEach(btn => {
+    btn.addEventListener('click', e => {
+      e.stopPropagation();
+      const slug = btn.closest('.rental-card').dataset.slug || '';
+      const url  = window.location.origin + window.location.pathname + (slug ? '#' + slug : '');
+      copyText(url);
+    });
+  });
+
+});
+</script>
 </body>
 </html>
