@@ -151,26 +151,28 @@ p { margin-bottom: 16px; color: var(--text-secondary); font-size: 1rem; line-hei
   );
 }
 
-/* Content sits bottom-left over overlay */
+/* Content centered over overlay */
 .hero__content {
   position: absolute;
   bottom: 0; left: 0; right: 0;
   z-index: 2;
   padding-bottom: 88px;
 }
-.hero__eyebrow {
-  display: inline-flex; align-items: center; gap: 10px;
-  font-size: 0.7rem; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold);
-  margin-bottom: 18px;
+.hero__content .container {
+  text-align: center;
 }
-.hero__eyebrow::before { content: ''; width: 28px; height: 1.5px; background: var(--gold); flex-shrink: 0; }
-
 .hero__content h1 {
   color: #fff;
-  font-size: clamp(2.8rem, 5.5vw, 5rem);
+  font-size: clamp(2.38rem, 4.675vw, 4.25rem);
   margin-bottom: 16px;
+  margin-left: auto;
+  margin-right: auto;
   text-shadow: 0 2px 24px rgba(0,0,0,0.35);
   max-width: 680px;
+}
+.hero__content h1 .hero__line {
+  display: block;
+  white-space: nowrap;
 }
 .hero__content h1 em { font-style: italic; color: var(--gold); }
 .hero__subline {
@@ -178,6 +180,8 @@ p { margin-bottom: 16px; color: var(--text-secondary); font-size: 1rem; line-hei
   font-size: 1.1rem;
   line-height: 1.8;
   max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
   text-shadow: 0 1px 10px rgba(0,0,0,0.4);
 }
 
@@ -381,7 +385,8 @@ p { margin-bottom: 16px; color: var(--text-secondary); font-size: 1rem; line-hei
   .nav__hamburger { display: flex; }
   .nav__inner { grid-template-columns: 1fr auto; }
   .nav.mobile-open .nav__mobile-search { display: block; }
-  .hero__content h1 { font-size: clamp(2.2rem, 8vw, 3rem); }
+  .hero__content h1 { font-size: clamp(1.87rem, 6.8vw, 2.55rem); }
+  .hero__content h1 .hero__line { white-space: normal; }
   .hero__counter { display: none; }
   .search-section { margin-top: 20px; }
   .search-card { flex-direction: column; padding: 4px; }
@@ -434,8 +439,7 @@ p { margin-bottom: 16px; color: var(--text-secondary); font-size: 1rem; line-hei
 
   <div class="hero__content">
     <div class="container">
-      <div class="hero__eyebrow">Premium Rentals &middot; Cyprus</div>
-      <h1>Discover your perfect<br>Cyprus <em>escape.</em></h1>
+      <h1><span class="hero__line">Discover your perfect</span><span class="hero__line">Cyprus <em>escape.</em></span></h1>
       <p class="hero__subline">Short & Long-Term | Updated Daily | Direct from Owners & Agents.</p>
     </div>
   </div>
