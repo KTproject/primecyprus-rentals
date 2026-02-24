@@ -67,7 +67,7 @@ p { margin-bottom: 16px; color: var(--text-secondary); font-size: 1rem; line-hei
 .btn--sm { padding: 9px 20px; font-size: 0.82rem; }
 
 /* ==============================
-   NAV — logo left, hamburger right
+   NAV — logo
    ============================== */
 .nav {
   position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
@@ -77,10 +77,8 @@ p { margin-bottom: 16px; color: var(--text-secondary); font-size: 1rem; line-hei
   transition: var(--transition);
 }
 .nav__inner {
-  display: grid;
-  grid-template-columns: 1fr auto;
+  display: flex;
   align-items: center;
-  gap: 24px;
   height: var(--nav-h);
   max-width: var(--max-width);
   margin: 0 auto;
@@ -91,29 +89,6 @@ p { margin-bottom: 16px; color: var(--text-secondary); font-size: 1rem; line-hei
 .nav__logo-name { font-family: var(--font-display); font-size: 1.3rem; font-weight: 700; color: #f1f5f9; line-height: 1; display: flex; align-items: center; gap: 7px; }
 .nav__logo-name .accent { color: var(--gold); }
 .nav__logo-sub { font-size: 0.57rem; font-weight: 700; letter-spacing: 0.28em; text-transform: uppercase; color: var(--gold); line-height: 1; padding-left: 2px; }
-
-.nav__hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 4px; flex-shrink: 0; }
-.nav__hamburger span { display: block; width: 22px; height: 2px; background: #f1f5f9; transition: var(--transition); }
-
-/* Mobile search drawer */
-.nav__mobile-search {
-  display: none;
-  padding: 12px 24px 16px;
-  background: rgba(10,18,30,0.98);
-  border-top: 1px solid rgba(255,255,255,0.07);
-}
-.mobile-search-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 10px; }
-.nav__mobile-search select,
-.nav__mobile-search input {
-  width: 100%; padding: 10px 14px;
-  background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.12); border-radius: 8px;
-  color: #f1f5f9; font-family: var(--font-body); font-size: 0.85rem; outline: none;
-}
-.nav__mobile-search select option { background: #1a2744; }
-.mobile-search-btn {
-  width: 100%; padding: 11px; background: var(--gold); border: none; border-radius: 8px;
-  font-family: var(--font-body); font-size: 0.85rem; font-weight: 700; color: #1a1f2e; cursor: pointer;
-}
 
 /* ==============================
    HERO CAROUSEL — full viewport
@@ -382,9 +357,6 @@ p { margin-bottom: 16px; color: var(--text-secondary); font-size: 1rem; line-hei
 }
 @media (max-width: 768px) {
   .section { padding: 56px 0; }
-  .nav__hamburger { display: flex; }
-  .nav__inner { grid-template-columns: 1fr auto; }
-  .nav.mobile-open .nav__mobile-search { display: block; }
   .hero__content h1 { font-size: clamp(1.87rem, 6.8vw, 2.55rem); }
   .hero__content h1 .hero__line { white-space: normal; }
   .hero__counter { display: none; }
@@ -413,18 +385,6 @@ p { margin-bottom: 16px; color: var(--text-secondary); font-size: 1rem; line-hei
       <span class="nav__logo-name">&#9670; Prime <span class="accent">Cyprus</span></span>
       <span class="nav__logo-sub">Rentals</span>
     </a>
-
-    <button class="nav__hamburger" aria-label="Toggle menu">
-      <span></span><span></span><span></span>
-    </button>
-  </div>
-
-  <div class="nav__mobile-search">
-    <div class="mobile-search-grid">
-      <select id="ms-loc"><option value="">Location</option><option value="limassol">Limassol</option><option value="paphos">Paphos</option><option value="nicosia">Nicosia</option><option value="larnaca">Larnaca</option><option value="protaras">Protaras</option></select>
-      <select id="ms-type"><option value="">Any type</option><option value="villa">Villa</option><option value="apartment">Apartment</option><option value="house">House</option></select>
-    </div>
-    <button class="mobile-search-btn" id="mobileSearchBtn">Search Rentals &rarr;</button>
   </div>
 </nav>
 
@@ -790,11 +750,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Mobile nav
-  const hamburger = document.querySelector('.nav__hamburger');
-  const nav = document.querySelector('.nav');
-  if (hamburger) hamburger.addEventListener('click', () => nav.classList.toggle('mobile-open'));
-
   const cards = document.querySelectorAll('.rental-card');
   const countEl = document.getElementById('listingCount');
 
@@ -820,10 +775,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   document.getElementById('mainSearchBtn').addEventListener('click', () =>
     doSearch(document.getElementById('s-loc').value, document.getElementById('s-type').value, document.getElementById('s-term').value));
-  document.getElementById('mobileSearchBtn').addEventListener('click', () => {
-    nav.classList.remove('mobile-open');
-    doSearch(document.getElementById('ms-loc').value, document.getElementById('ms-type').value, '');
-  });
 
   // Area cards — filter by area and scroll to listings
   document.querySelectorAll('.area-card[data-area]').forEach(c => {
