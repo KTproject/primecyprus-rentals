@@ -129,9 +129,9 @@ p { margin-bottom: 16px; color: var(--text-secondary); font-size: 1rem; line-hei
 /* Content centered over overlay */
 .hero__content {
   position: absolute;
-  bottom: 0; left: 0; right: 0;
+  top: 50%; left: 0; right: 0;
   z-index: 2;
-  padding-bottom: 88px;
+  transform: translateY(-50%);
 }
 .hero__content .container {
   text-align: center;
@@ -184,7 +184,7 @@ p { margin-bottom: 16px; color: var(--text-secondary); font-size: 1rem; line-hei
    ============================== */
 .search-section {
   position: relative; z-index: 10;
-  margin-top: -44px;
+  margin-top: 24px;
 }
 .search-card {
   background: var(--bg-card);
