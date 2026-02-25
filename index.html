@@ -556,15 +556,15 @@ p { margin-bottom: 16px; color: var(--text-secondary); font-size: 1rem; line-hei
 <script>
 document.addEventListener('DOMContentLoaded', () => {
   async function loadRentals() {
-    const query = `*[_type == "rental"] | order(title asc) { title, location, pricePerMonth, minStay, maxStay, description, "imageUrl": images[0].asset->url }`;
+    const query = `*[_type == "rental"] | order(title asc) { title, location, pricePerMonth, minStay, maxStay, description, "imageUrl": images[0].asset._ref }`;
     const url = `https://7ic15vv6.api.sanity.io/v2024-02-24/data/query/production?query=${encodeURIComponent(query)}`;
     const res = await fetch(url);
-    const { result } = await res.json();
+    const data = await res.json(); console.log("Sanity result:", JSON.stringify(data.result)); const result = data.result;
 
     const grid = document.getElementById('listingsGrid');
     grid.innerHTML = result.map(r => `
       <div class="rental-card animate-in">
-        <div class="rental-card__img"><img src="${r.imageUrl || ''}" alt="${r.title}"></div>
+        <div class="rental-card__img"><img src="${r.imageUrl ? `https://cdn.sanity.io/images/7ic15vv6/production/${r.imageUrl.replace('image-','').replace(/([a-f0-9]+-[0-9]+x[0-9]+)-([a-z]+)$/,'$1.$2')}` : ''}" alt="${r.title}"></div>
         <div class="rental-card__body">
           <div class="rental-card__location">${r.location || ''}</div>
           <div class="rental-card__title">${r.title}</div>
