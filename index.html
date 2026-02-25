@@ -564,15 +564,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const grid = document.getElementById('listingsGrid');
     grid.innerHTML = result.map(r => `
       <div class="rental-card animate-in">
-        <div class="rental-card__img"><img src="${r.imageUrl || ''}" alt="${r.title}"></div>
+        <div class="rental-card__img"><img src="${r.imageUrl ? 'https://cdn.sanity.io/images/7ic15vv6/production/' + r.imageUrl.replace(/^image-/,'').replace(/-([a-z]+)$/,'.$1') : ''}" alt="${r.title}"></div>
         <div class="rental-card__body">
           <div class="rental-card__location">${r.location || ''}</div>
           <div class="rental-card__title">${r.title}</div>
           <div class="rental-card__desc">${r.description || ''}</div>
-          <div class="rental-card__features">
-            <span class="rental-card__feature">Min stay: ${r.minStay} days</span>
-            <span class="rental-card__feature">Max stay: ${r.maxStay} days</span>
-          </div>
+
           <div class="rental-card__footer">
             <div class="rental-card__price">€${r.pricePerMonth}<span class="rental-card__price-period"> /month</span></div>
             <a href="https://primecyprus.xyz/contact.html" class="rental-card__cta">Enquire &rarr;</a>
