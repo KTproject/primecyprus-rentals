@@ -564,7 +564,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const grid = document.getElementById('listingsGrid');
     grid.innerHTML = result.map(r => `
       <div class="rental-card animate-in">
-        <div class="rental-card__img"><img src="${r.imageUrl ? `https://cdn.sanity.io/images/7ic15vv6/production/${r.imageUrl.replace('image-','').replace(/([a-f0-9]+-[0-9]+x[0-9]+)-([a-z]+)$/,'$1.$2')}` : ''}" alt="${r.title}"></div>
+        <div class="rental-card__img"><img src="${r.imageUrl ? `https://cdn.sanity.io/images/7ic15vv6/production/${r.imageUrl.replace(/^image-/,'').replace(/-([a-z]+)$/,'.$1')}` : ''}" alt="${r.title}"></div>
         <div class="rental-card__body">
           <div class="rental-card__location">${r.location || ''}</div>
           <div class="rental-card__title">${r.title}</div>
