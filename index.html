@@ -580,6 +580,7 @@ document.addEventListener('DOMContentLoaded', () => {
         </div>
       </div>
     `).join('');
+    grid.querySelectorAll('.animate-in').forEach(el => el.classList.add('visible'));
   }
   loadRentals();
 
