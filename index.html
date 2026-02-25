@@ -556,7 +556,7 @@ p { margin-bottom: 16px; color: var(--text-secondary); font-size: 1rem; line-hei
 <script>
 document.addEventListener('DOMContentLoaded', () => {
   async function loadRentals() {
-    const query = `*[_type == "rental"] | order(title asc) { title, location, pricePerMonth, minStay, maxStay, description, "imageUrl": images[0].asset._ref }`;
+    const query = `*[_type == "rental"] | order(title asc) { title, location, priceMonthly, minStay, maxStay, description, "imageUrl": images[0].asset._ref }`;
     const url = `https://7ic15vv6.api.sanity.io/v2024-02-24/data/query/production?query=${encodeURIComponent(query)}`;
     const res = await fetch(url);
     const data = await res.json(); console.log("Sanity result:", JSON.stringify(data.result)); const result = data.result;
@@ -571,7 +571,7 @@ document.addEventListener('DOMContentLoaded', () => {
           <div class="rental-card__desc">${r.description || ''}</div>
 
           <div class="rental-card__footer">
-            <div class="rental-card__price">€${r.pricePerMonth}<span class="rental-card__price-period"> /month</span></div>
+            <div class="rental-card__price">€${r.priceMonthly}<span class="rental-card__price-period"> /month</span></div>
             <a href="https://primecyprus.xyz/contact.html" class="rental-card__cta">Enquire &rarr;</a>
           </div>
         </div>
