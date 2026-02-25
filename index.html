@@ -569,10 +569,7 @@ document.addEventListener('DOMContentLoaded', () => {
           <div class="rental-card__location">${r.location || ''}</div>
           <div class="rental-card__title">${r.title}</div>
           <div class="rental-card__desc">${r.description || ''}</div>
-          <div class="rental-card__features">
-            <span class="rental-card__feature">Min stay: ${r.minStay} days</span>
-            <span class="rental-card__feature">Max stay: ${r.maxStay} days</span>
-          </div>
+
           <div class="rental-card__footer">
             <div class="rental-card__price">€${r.pricePerMonth}<span class="rental-card__price-period"> /month</span></div>
             <a href="https://primecyprus.xyz/contact.html" class="rental-card__cta">Enquire &rarr;</a>
