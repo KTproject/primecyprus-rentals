@@ -183,8 +183,7 @@ p { margin-bottom: 16px; color: var(--text-secondary); font-size: 1rem; line-hei
    SEARCH BAR — floating below hero
    ============================== */
 .search-section {
-  position: relative; z-index: 10;
-  margin-top: 24px;
+  position: absolute; bottom: 40px; left: 0; right: 0; z-index: 10;
 }
 .search-card {
   background: var(--bg-card);
@@ -404,16 +403,7 @@ p { margin-bottom: 16px; color: var(--text-secondary); font-size: 1rem; line-hei
     </div>
   </div>
 
-  <div class="hero__counter"><strong id="slideNum">1</strong> / 3</div>
-
-  <div class="hero__dots" role="tablist">
-    <button class="hero__dot active" data-slide="0" aria-label="Slide 1"></button>
-    <button class="hero__dot" data-slide="1" aria-label="Slide 2"></button>
-    <button class="hero__dot" data-slide="2" aria-label="Slide 3"></button>
-  </div>
-</section>
-
-<!-- SEARCH BAR -->
+  <!-- SEARCH BAR -->
 <div class="search-section">
   <div class="container">
     <div class="search-card">
@@ -429,6 +419,16 @@ p { margin-bottom: 16px; color: var(--text-secondary); font-size: 1rem; line-hei
         <span class="search-field__label">Duration</span>
         <select id="s-term"><option value="">Short or long term</option><option value="short">Short stay</option><option value="long">Long term</option></select>
       </div>
+  <div class="hero__counter"><strong id="slideNum">1</strong> / 3</div>
+
+  <div class="hero__dots" role="tablist">
+    <button class="hero__dot active" data-slide="0" aria-label="Slide 1"></button>
+    <button class="hero__dot" data-slide="1" aria-label="Slide 2"></button>
+    <button class="hero__dot" data-slide="2" aria-label="Slide 3"></button>
+  </div>
+</section>
+
+
       <div class="search-field">
         <span class="search-field__label">Guests</span>
         <input type="text" id="s-guests" placeholder="Any">
