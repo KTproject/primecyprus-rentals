@@ -129,9 +129,9 @@ p { margin-bottom: 16px; color: var(--text-secondary); font-size: 1rem; line-hei
 /* Content centered over overlay */
 .hero__content {
   position: absolute;
-  top: 50%; left: 0; right: 0;
+  bottom: 0; left: 0; right: 0;
   z-index: 2;
-  transform: translateY(-50%);
+  padding-bottom: 88px;
 }
 .hero__content .container {
   text-align: center;
@@ -183,7 +183,8 @@ p { margin-bottom: 16px; color: var(--text-secondary); font-size: 1rem; line-hei
    SEARCH BAR — floating below hero
    ============================== */
 .search-section {
-  position: absolute; bottom: 40px; left: 0; right: 0; z-index: 10;
+  position: relative; z-index: 10;
+  margin-top: -44px;
 }
 .search-card {
   background: var(--bg-card);
@@ -403,22 +404,6 @@ p { margin-bottom: 16px; color: var(--text-secondary); font-size: 1rem; line-hei
     </div>
   </div>
 
-  <!-- SEARCH BAR -->
-<div class="search-section">
-  <div class="container">
-    <div class="search-card">
-      <div class="search-field">
-        <span class="search-field__label">Location</span>
-        <select id="s-loc"><option value="">Anywhere in Cyprus</option><option value="limassol">Limassol</option><option value="paphos">Paphos</option><option value="nicosia">Nicosia</option><option value="larnaca">Larnaca</option><option value="protaras">Protaras</option></select>
-      </div>
-      <div class="search-field">
-        <span class="search-field__label">Property type</span>
-        <select id="s-type"><option value="">Any type</option><option value="villa">Villa</option><option value="apartment">Apartment</option><option value="house">House</option></select>
-      </div>
-      <div class="search-field">
-        <span class="search-field__label">Duration</span>
-        <select id="s-term"><option value="">Short or long term</option><option value="short">Short stay</option><option value="long">Long term</option></select>
-      </div>
   <div class="hero__counter"><strong id="slideNum">1</strong> / 3</div>
 
   <div class="hero__dots" role="tablist">
@@ -426,20 +411,36 @@ p { margin-bottom: 16px; color: var(--text-secondary); font-size: 1rem; line-hei
     <button class="hero__dot" data-slide="1" aria-label="Slide 2"></button>
     <button class="hero__dot" data-slide="2" aria-label="Slide 3"></button>
   </div>
-</section>
-
-
-      <div class="search-field">
-        <span class="search-field__label">Guests</span>
-        <input type="text" id="s-guests" placeholder="Any">
+  <div class="search-section">
+    <div class="container">
+      <div class="search-card">
+        <div class="search-field">
+          <span class="search-field__label">Location</span>
+          <select id="s-loc"><option value="">Anywhere in Cyprus</option><option value="limassol">Limassol</option><option value="paphos">Paphos</option><option value="nicosia">Nicosia</option><option value="larnaca">Larnaca</option><option value="protaras">Protaras</option></select>
+        </div>
+        <div class="search-field">
+          <span class="search-field__label">Property type</span>
+          <select id="s-type"><option value="">Any type</option><option value="villa">Villa</option><option value="apartment">Apartment</option><option value="house">House</option></select>
+        </div>
+        <div class="search-field">
+          <span class="search-field__label">Duration</span>
+          <select id="s-term"><option value="">Short or long term</option><option value="short">Short stay</option><option value="long">Long term</option></select>
+        </div>
+        <div class="search-field">
+          <span class="search-field__label">Guests</span>
+          <input type="text" id="s-guests" placeholder="Any">
+        </div>
+        <button class="search-submit" id="mainSearchBtn">
+          <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+          Search
+        </button>
       </div>
-      <button class="search-submit" id="mainSearchBtn">
-        <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
-        Search
-      </button>
     </div>
-  </div>
-</div>
+    </div>
+  </section>
+
+<!-- SEARCH BAR -->
+
 
 <!-- LISTINGS -->
 <section class="listings-section" id="listings">
@@ -564,12 +565,15 @@ document.addEventListener('DOMContentLoaded', () => {
     const grid = document.getElementById('listingsGrid');
     grid.innerHTML = result.map(r => `
       <div class="rental-card animate-in">
-        <div class="rental-card__img"><img src="${r.imageUrl ? `https://cdn.sanity.io/images/7ic15vv6/production/${r.imageUrl.replace(/^image-/,'').replace(/-([a-z]+)$/,'.$1')}` : ''}" alt="${r.title}"></div>
+        <div class="rental-card__img"><img src="${r.imageUrl || ''}" alt="${r.title}"></div>
         <div class="rental-card__body">
           <div class="rental-card__location">${r.location || ''}</div>
           <div class="rental-card__title">${r.title}</div>
           <div class="rental-card__desc">${r.description || ''}</div>
-
+          <div class="rental-card__features">
+            <span class="rental-card__feature">Min stay: ${r.minStay} days</span>
+            <span class="rental-card__feature">Max stay: ${r.maxStay} days</span>
+          </div>
           <div class="rental-card__footer">
             <div class="rental-card__price">€${r.pricePerMonth}<span class="rental-card__price-period"> /month</span></div>
             <a href="https://primecyprus.xyz/contact.html" class="rental-card__cta">Enquire &rarr;</a>
@@ -577,7 +581,6 @@ document.addEventListener('DOMContentLoaded', () => {
         </div>
       </div>
     `).join('');
-    grid.querySelectorAll('.animate-in').forEach(el => el.classList.add('visible'));
   }
   loadRentals();
 
