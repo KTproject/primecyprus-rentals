@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Property — Prime Cyprus Rentals</title>
+  <meta name="description" content="View rental property details on Prime Cyprus Rentals. Premium rentals across Cyprus.">
+  <link rel="canonical" href="https://rentals.primecyprus.xyz/property.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Prime Cyprus Rentals">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+
+:root {
+  --bg-primary: #f7f3ee;
+  --bg-secondary: #ede8df;
+  --bg-card: #ffffff;
+  --text-primary: #1a1f2e;
+  --text-secondary: #4a5568;
+  --text-muted: #8896a8;
+  --copper: #b87333;
+  --copper-light: #d4935a;
+  --copper-glow: rgba(184,115,51,0.1);
+  --navy: #1a2744;
+  --gold: #d4a853;
+  --border: rgba(26,31,46,0.1);
+  --border-copper: rgba(184,115,51,0.25);
+  --shadow-sm: 0 2px 12px rgba(26,31,46,0.07);
+  --shadow-md: 0 8px 32px rgba(26,31,46,0.12);
+  --shadow-lg: 0 24px 64px rgba(26,31,46,0.2);
+  --font-display: 'Playfair Display', Georgia, serif;
+  --font-body: 'DM Sans', -apple-system, sans-serif;
+  --max-width: 1200px;
+  --transition: 0.3s cubic-bezier(0.4,0,0.2,1);
+  --nav-h: 72px;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+body { font-family: var(--font-body); background: var(--bg-primary); color: var(--text-primary); line-height: 1.7; font-size: 16px; overflow-x: hidden; }
+a { color: var(--copper); text-decoration: none; transition: var(--transition); }
+a:hover { color: var(--navy); }
+img { max-width: 100%; height: auto; display: block; }
+.container { max-width: var(--max-width); margin: 0 auto; padding: 0 24px; }
+.section { padding: 80px 0; }
+.section--alt { background: var(--bg-secondary); }
+
+h1,h2,h3,h4 { font-family: var(--font-display); font-weight: 700; line-height: 1.15; letter-spacing: -0.025em; color: var(--text-primary); }
+h1 { font-size: clamp(2.2rem, 4vw, 3.2rem); }
+h2 { font-size: clamp(1.6rem, 3vw, 2.2rem); margin-bottom: 20px; }
+h3 { font-size: clamp(1.2rem, 2vw, 1.5rem); margin-bottom: 12px; }
+p { margin-bottom: 16px; color: var(--text-secondary); font-size: 1rem; line-height: 1.75; }
+.lead { font-size: 1.1rem; line-height: 1.85; color: var(--text-secondary); max-width: 600px; }
+.section-label { font-family: var(--font-body); font-size: 0.72rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--copper); margin-bottom: 14px; display: block; }
+
+.btn { display: inline-flex; align-items: center; gap: 8px; padding: 14px 30px; font-family: var(--font-body); font-size: 0.9rem; font-weight: 700; border: none; border-radius: 6px; cursor: pointer; transition: var(--transition); text-decoration: none; }
+.btn--primary { background: var(--navy); color: #fff; }
+.btn--primary:hover { background: #243360; color: #fff; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(26,39,68,0.2); }
+.btn--copper { background: var(--copper); color: #fff; }
+.btn--copper:hover { background: var(--copper-light); color: #fff; transform: translateY(-2px); }
+.btn--outline { background: transparent; color: var(--copper); border: 1.5px solid var(--border-copper); }
+.btn--outline:hover { background: var(--copper-glow); color: var(--navy); border-color: var(--copper); }
+.btn--sm { padding: 9px 20px; font-size: 0.82rem; }
+.btn--full { width: 100%; justify-content: center; }
+
+/* NAV */
+.nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+  background: rgba(10,18,30,0.92);
+  backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255,255,255,0.07);
+  transition: var(--transition);
+}
+.nav__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: var(--nav-h);
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+.nav__logo { display: flex; flex-direction: column; gap: 2px; text-decoration: none; flex-shrink: 0; }
+.nav__logo-name { font-family: var(--font-display); font-size: 1.3rem; font-weight: 700; color: #f1f5f9; line-height: 1; display: flex; align-items: center; gap: 7px; }
+.nav__logo-name .accent { color: var(--gold); }
+.nav__logo-sub { font-size: 0.57rem; font-weight: 700; letter-spacing: 0.28em; text-transform: uppercase; color: var(--gold); line-height: 1; padding-left: 2px; }
+.nav__back { font-size: 0.85rem; font-weight: 600; color: rgba(255,255,255,0.6); display: flex; align-items: center; gap: 6px; transition: var(--transition); }
+.nav__back:hover { color: var(--gold); }
+
+/* PAGE HEADER */
+.page-header {
+  padding-top: calc(var(--nav-h) + 48px);
+  padding-bottom: 0;
+  background: var(--bg-primary);
+}
+
+/* GALLERY */
+.gallery {
+  width: 100%;
+  position: relative;
+}
+.gallery__main {
+  width: 100%;
+  height: 520px;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, #c5d8ea, #8ab4cc);
+}
+.gallery__main img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  transition: opacity 0.5s ease;
+}
+.gallery__thumbs {
+  display: flex;
+  gap: 8px;
+  padding: 10px 0;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.gallery__thumbs::-webkit-scrollbar { display: none; }
+.gallery__thumb {
+  flex-shrink: 0;
+  width: 96px; height: 64px;
+  border-radius: 6px;
+  overflow: hidden;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: var(--transition);
+  background: var(--bg-secondary);
+}
+.gallery__thumb.active { border-color: var(--copper); }
+.gallery__thumb img { width: 100%; height: 100%; object-fit: cover; }
+.gallery__count {
+  position: absolute; bottom: 16px; right: 16px;
+  background: rgba(10,18,30,0.65); color: #fff;
+  font-size: 0.75rem; font-weight: 600; letter-spacing: 0.08em;
+  padding: 5px 12px; border-radius: 100px;
+}
+.gallery__nav {
+  position: absolute; top: 50%; transform: translateY(-50%);
+  background: rgba(255,255,255,0.9); border: none; cursor: pointer;
+  width: 40px; height: 40px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  transition: var(--transition); box-shadow: var(--shadow-sm);
+  color: var(--navy);
+}
+.gallery__nav:hover { background: #fff; box-shadow: var(--shadow-md); }
+.gallery__nav--prev { left: 16px; }
+.gallery__nav--next { right: 16px; }
+.gallery__nav svg { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; }
+
+/* PROPERTY LAYOUT */
+.property-layout {
+  display: grid;
+  grid-template-columns: 1fr 360px;
+  gap: 48px;
+  align-items: start;
+  padding: 48px 0 80px;
+}
+
+/* LEFT COL */
+.property-breadcrumb {
+  display: flex; align-items: center; gap: 8px;
+  font-size: 0.8rem; color: var(--text-muted);
+  margin-bottom: 24px;
+}
+.property-breadcrumb a { color: var(--text-muted); }
+.property-breadcrumb a:hover { color: var(--copper); }
+.property-breadcrumb .sep { opacity: 0.5; }
+
+.property-location {
+  font-size: 0.7rem; font-weight: 700; letter-spacing: 0.2em;
+  text-transform: uppercase; color: var(--copper); margin-bottom: 10px;
+}
+.property-title { margin-bottom: 20px; }
+
+.property-meta {
+  display: flex; gap: 24px; flex-wrap: wrap;
+  padding: 20px 0;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 32px;
+}
+.property-meta__item {
+  display: flex; align-items: center; gap: 8px;
+  font-size: 0.88rem; font-weight: 600; color: var(--text-secondary);
+}
+.property-meta__item svg { width: 18px; height: 18px; fill: none; stroke: var(--copper); stroke-width: 2; stroke-linecap: round; }
+.property-meta__label { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-muted); margin-right: 4px; }
+
+.property-section { margin-bottom: 40px; }
+.property-section h3 { font-size: 1.1rem; font-weight: 700; color: var(--text-primary); margin-bottom: 14px; padding-bottom: 10px; border-bottom: 1px solid var(--border); }
+
+.property-desc { font-size: 0.97rem; line-height: 1.85; color: var(--text-secondary); }
+.property-desc p { margin-bottom: 12px; }
+.property-desc p:last-child { margin-bottom: 0; }
+
+.amenities-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+.amenity-item {
+  display: flex; align-items: center; gap: 10px;
+  font-size: 0.88rem; color: var(--text-secondary); font-weight: 500;
+  padding: 10px 12px;
+  background: var(--bg-secondary);
+  border-radius: 8px;
+}
+.amenity-item svg { width: 16px; height: 16px; flex-shrink: 0; fill: none; stroke: var(--copper); stroke-width: 2; stroke-linecap: round; }
+
+/* RIGHT COL — Sidebar */
+.property-sidebar {
+  position: sticky;
+  top: calc(var(--nav-h) + 24px);
+}
+.sidebar-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 28px;
+  box-shadow: var(--shadow-md);
+}
+.sidebar-card__price {
+  display: flex; align-items: baseline; gap: 6px;
+  margin-bottom: 6px;
+}
+.sidebar-card__amount {
+  font-family: var(--font-display);
+  font-size: 2rem; font-weight: 700;
+  color: var(--navy);
+}
+.sidebar-card__period {
+  font-size: 0.8rem; color: var(--text-muted); font-weight: 500;
+}
+.sidebar-card__note {
+  font-size: 0.78rem; color: var(--text-muted);
+  margin-bottom: 24px;
+}
+
+.sidebar-divider { border: none; border-top: 1px solid var(--border); margin: 20px 0; }
+
+.sidebar-details { list-style: none; margin-bottom: 24px; }
+.sidebar-details li {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 0.88rem;
+}
+.sidebar-details li:last-child { border-bottom: none; }
+.sidebar-details .detail-label { color: var(--text-muted); font-weight: 500; }
+.sidebar-details .detail-value { font-weight: 700; color: var(--text-primary); }
+
+.sidebar-cta { margin-bottom: 12px; }
+.sidebar-cta a { font-size: 0.8rem; text-align: center; display: block; color: var(--text-muted); margin-top: 10px; }
+.sidebar-cta a:hover { color: var(--copper); }
+
+.sidebar-share {
+  display: flex; align-items: center; justify-content: center; gap: 8px;
+  font-size: 0.8rem; font-weight: 600; color: var(--text-muted);
+  cursor: pointer; background: none; border: none; width: 100%;
+  padding: 8px; border-radius: 6px; transition: var(--transition);
+}
+.sidebar-share:hover { color: var(--copper); background: var(--copper-glow); }
+.sidebar-share svg { width: 14px; height: 14px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+
+/* Loading / Error states */
+.state-loading, .state-error, .state-notfound {
+  min-height: 60vh;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  text-align: center;
+  padding: 80px 24px;
+}
+.state-loading p, .state-error p, .state-notfound p { color: var(--text-muted); font-size: 1rem; }
+.spinner {
+  width: 36px; height: 36px;
+  border: 3px solid var(--border);
+  border-top-color: var(--copper);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+  margin-bottom: 16px;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* Toast */
+.share-toast {
+  position: fixed; bottom: 32px; left: 50%;
+  transform: translateX(-50%) translateY(12px);
+  background: var(--navy); color: #fff;
+  font-family: var(--font-body); font-size: 0.85rem; font-weight: 600;
+  padding: 12px 24px; border-radius: 100px; box-shadow: var(--shadow-md);
+  opacity: 0; pointer-events: none; transition: opacity 0.3s, transform 0.3s;
+  z-index: 9999; white-space: nowrap;
+}
+.share-toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+
+/* FOOTER */
+.footer { background: var(--navy); padding: 48px 0 28px; }
+.footer__inner { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px; margin-bottom: 40px; }
+.footer__brand-name { font-family: var(--font-display); font-size: 1.4rem; font-weight: 700; color: #f1f5f9; display: flex; flex-direction: column; gap: 3px; margin-bottom: 12px; }
+.footer__brand-name .accent { color: var(--gold); }
+.footer__brand-sub { font-size: 0.6rem; font-weight: 700; letter-spacing: 0.25em; text-transform: uppercase; color: var(--gold); }
+.footer__brand p { font-size: 0.85rem; color: rgba(255,255,255,0.45); max-width: 280px; margin-top: 8px; }
+.footer h4 { font-family: var(--font-body); font-size: 0.72rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.35); margin-bottom: 16px; }
+.footer__links { list-style: none; }
+.footer__links li { margin-bottom: 9px; }
+.footer__links a { font-size: 0.85rem; color: rgba(255,255,255,0.55); }
+.footer__links a:hover { color: #fff; }
+.footer__bottom { border-top: 1px solid rgba(255,255,255,0.08); padding-top: 22px; display: flex; justify-content: space-between; align-items: center; font-size: 0.76rem; color: rgba(255,255,255,0.3); }
+
+/* ANIMATIONS */
+@keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+.animate-in { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease-out, transform 0.6s ease-out; }
+.animate-in.visible { opacity: 1; transform: translateY(0); }
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .property-layout { grid-template-columns: 1fr; }
+  .property-sidebar { position: static; }
+  .gallery__main { height: 360px; }
+}
+@media (max-width: 768px) {
+  .gallery__main { height: 260px; }
+  .gallery__thumbs { display: none; }
+  .property-meta { gap: 16px; }
+  .amenities-grid { grid-template-columns: 1fr; }
+  .footer__inner { grid-template-columns: 1fr; gap: 28px; }
+  .footer__bottom { flex-direction: column; gap: 12px; text-align: center; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav" role="navigation">
+  <div class="nav__inner">
+    <a href="/" class="nav__logo">
+      <span class="nav__logo-name">&#9670; Prime <span class="accent">Cyprus</span></span>
+      <span class="nav__logo-sub">Rentals</span>
+    </a>
+    <a href="/" class="nav__back">&#8592; All properties</a>
+  </div>
+</nav>
+
+<!-- MAIN CONTENT -->
+<main id="propertyContent">
+  <!-- Loading state -->
+  <div class="state-loading" id="stateLoading">
+    <div class="spinner"></div>
+    <p>Loading property&hellip;</p>
+  </div>
+
+  <!-- Error state -->
+  <div class="state-error" id="stateError" style="display:none;">
+    <p style="font-size:2rem; margin-bottom:12px;">&#9888;</p>
+    <h2>Something went wrong.</h2>
+    <p>We couldn&rsquo;t load this property. Please try again.</p>
+    <a href="/" class="btn btn--primary" style="margin-top:24px;">&#8592; Back to listings</a>
+  </div>
+
+  <!-- Not found state -->
+  <div class="state-notfound" id="stateNotfound" style="display:none;">
+    <p style="font-size:2rem; margin-bottom:12px;">&#128269;</p>
+    <h2>No property specified.</h2>
+    <p>Please select a property from our listings.</p>
+    <a href="/" class="btn btn--primary" style="margin-top:24px;">&#8592; Back to listings</a>
+  </div>
+
+  <!-- Property content — injected by JS -->
+  <div id="stateProperty" style="display:none;">
+
+    <!-- Gallery -->
+    <div class="page-header">
+      <div class="container">
+        <div class="gallery" id="gallery">
+          <div class="gallery__main" id="galleryMain">
+            <img id="galleryMainImg" src="" alt="">
+            <button class="gallery__nav gallery__nav--prev" id="galleryPrev" aria-label="Previous image">
+              <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
+            </button>
+            <button class="gallery__nav gallery__nav--next" id="galleryNext" aria-label="Next image">
+              <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+            </button>
+            <span class="gallery__count" id="galleryCount">1 / 1</span>
+          </div>
+          <div class="gallery__thumbs" id="galleryThumbs"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Property Details -->
+    <div class="container">
+      <div class="property-layout">
+
+        <!-- Left: Details -->
+        <div>
+          <div class="property-breadcrumb">
+            <a href="/">Rentals</a>
+            <span class="sep">/</span>
+            <span id="breadcrumbLocation"></span>
+            <span class="sep">/</span>
+            <span id="breadcrumbTitle"></span>
+          </div>
+
+          <div class="property-location" id="propLocation"></div>
+          <h1 class="property-title" id="propTitle"></h1>
+
+          <div class="property-meta" id="propMeta"></div>
+
+          <div class="property-section animate-in" id="sectionDesc">
+            <h3>About this property</h3>
+            <div class="property-desc" id="propDesc"></div>
+          </div>
+
+          <div class="property-section animate-in" id="sectionAmenities" style="display:none;">
+            <h3>What&rsquo;s included</h3>
+            <div class="amenities-grid" id="propAmenities"></div>
+          </div>
+        </div>
+
+        <!-- Right: Sidebar -->
+        <aside class="property-sidebar">
+          <div class="sidebar-card">
+            <div class="sidebar-card__price">
+              <span class="sidebar-card__amount" id="sidebarPrice"></span>
+              <span class="sidebar-card__period" id="sidebarPeriod">/month</span>
+            </div>
+            <p class="sidebar-card__note" id="sidebarNote"></p>
+
+            <ul class="sidebar-details" id="sidebarDetails"></ul>
+
+            <div class="sidebar-cta">
+              <a id="sidebarEnquireBtn" href="https://primecyprus.xyz/contact.html" class="btn btn--primary btn--full">Enquire about this property &rarr;</a>
+              <a href="https://primecyprus.xyz/contact.html">or book a call &rarr;</a>
+            </div>
+
+            <hr class="sidebar-divider">
+
+            <button class="sidebar-share" id="shareBtn">
+              <svg viewBox="0 0 24 24"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+              Share this property
+            </button>
+          </div>
+        </aside>
+
+      </div>
+    </div>
+  </div>
+</main>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer__inner">
+      <div class="footer__brand">
+        <div class="footer__brand-name">&#9670; Prime <span class="accent">Cyprus</span><span class="footer__brand-sub">Rentals</span></div>
+        <p>Premium rental listings across Cyprus for short stays, long-term lets, and those making the island home.</p>
+      </div>
+      <div>
+        <h4>Browse</h4>
+        <ul class="footer__links">
+          <li><a href="/#listings">All Rentals</a></li>
+          <li><a href="/#areas">Browse by Area</a></li>
+          <li><a href="/#faq">FAQ</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Prime Cyprus</h4>
+        <ul class="footer__links">
+          <li><a href="https://primecyprus.xyz">Main Site</a></li>
+          <li><a href="https://primecyprus.xyz/residency-tax.html">Residency &amp; Tax</a></li>
+          <li><a href="https://primecyprus.xyz/property.html">Property for Sale</a></li>
+          <li><a href="https://primecyprus.xyz/contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>&copy; 2026 Prime Cyprus. All rights reserved.</span>
+      <span>General information only. Not legal or financial advice.</span>
+    </div>
+  </div>
+</footer>
+
+<div class="share-toast" id="shareToast">&#10003;&nbsp; Link copied</div>
+
+<script>
+const CDN = 'https://cdn.sanity.io/images/7ic15vv6/production/';
+const API = 'https://7ic15vv6.api.sanity.io/v2024-02-24/data/query/production';
+
+function imageUrl(ref) {
+  if (!ref) return '';
+  return CDN + ref.replace(/^image-/, '').replace(/-([a-z]+)$/, '.$1');
+}
+
+// Gallery state
+let galleryImages = [];
+let galleryIndex = 0;
+
+function setGalleryImage(idx) {
+  if (!galleryImages.length) return;
+  galleryIndex = (idx + galleryImages.length) % galleryImages.length;
+  const img = document.getElementById('galleryMainImg');
+  img.src = galleryImages[galleryIndex];
+  img.alt = document.getElementById('propTitle').textContent + ' — image ' + (galleryIndex + 1);
+  document.getElementById('galleryCount').textContent = (galleryIndex + 1) + ' / ' + galleryImages.length;
+  // Update thumbs
+  document.querySelectorAll('.gallery__thumb').forEach((t, i) => {
+    t.classList.toggle('active', i === galleryIndex);
+  });
+}
+
+function buildGallery(images) {
+  if (!images || !images.length) {
+    document.getElementById('galleryMain').style.background = 'linear-gradient(135deg, #c5d8ea, #8ab4cc)';
+    document.getElementById('galleryCount').style.display = 'none';
+    document.getElementById('galleryPrev').style.display = 'none';
+    document.getElementById('galleryNext').style.display = 'none';
+    return;
+  }
+  galleryImages = images.map(ref => imageUrl(ref));
+  setGalleryImage(0);
+
+  // Thumbnails
+  const thumbsEl = document.getElementById('galleryThumbs');
+  thumbsEl.innerHTML = galleryImages.map((src, i) => `
+    <div class="gallery__thumb${i === 0 ? ' active' : ''}" data-idx="${i}">
+      <img src="${src}" alt="Thumbnail ${i + 1}">
+    </div>
+  `).join('');
+  thumbsEl.querySelectorAll('.gallery__thumb').forEach(t => {
+    t.addEventListener('click', () => setGalleryImage(+t.dataset.idx));
+  });
+
+  if (galleryImages.length <= 1) {
+    document.getElementById('galleryPrev').style.display = 'none';
+    document.getElementById('galleryNext').style.display = 'none';
+  }
+}
+
+function renderMeta(p) {
+  const items = [];
+  if (p.bedrooms) items.push(`<div class="property-meta__item"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg><span>${p.bedrooms} bed${p.bedrooms > 1 ? 's' : ''}</span></div>`);
+  if (p.bathrooms) items.push(`<div class="property-meta__item"><svg viewBox="0 0 24 24"><path d="M4 12h16a1 1 0 010 2v4a2 2 0 01-2 2H6a2 2 0 01-2-2v-4a1 1 0 010-2zm3-8v5m0 0a2 2 0 104 0"/></svg><span>${p.bathrooms} bath${p.bathrooms > 1 ? 's' : ''}</span></div>`);
+  if (p.areaM2) items.push(`<div class="property-meta__item"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 3v18M15 3v18M3 9h18M3 15h18"/></svg><span>${p.areaM2} m²</span></div>`);
+  if (p.propertyType) items.push(`<div class="property-meta__item"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/></svg><span>${p.propertyType}</span></div>`);
+  if (p.furnished !== undefined) items.push(`<div class="property-meta__item"><svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/></svg><span>${p.furnished ? 'Furnished' : 'Unfurnished'}</span></div>`);
+  document.getElementById('propMeta').innerHTML = items.join('');
+}
+
+function renderSidebar(p) {
+  if (p.priceMonthly) {
+    document.getElementById('sidebarPrice').textContent = '€' + p.priceMonthly.toLocaleString();
+    document.getElementById('sidebarPeriod').textContent = '/month';
+    document.getElementById('sidebarNote').textContent = 'Price shown per calendar month. Contact for short-stay rates.';
+  } else {
+    document.getElementById('sidebarPrice').textContent = 'POA';
+    document.getElementById('sidebarPeriod').textContent = '';
+    document.getElementById('sidebarNote').textContent = 'Contact us for pricing details.';
+  }
+
+  const details = [];
+  if (p.propertyType) details.push(['Type', p.propertyType]);
+  if (p.bedrooms) details.push(['Bedrooms', p.bedrooms]);
+  if (p.bathrooms) details.push(['Bathrooms', p.bathrooms]);
+  if (p.areaM2) details.push(['Area', p.areaM2 + ' m²']);
+  if (p.furnished !== undefined) details.push(['Furnished', p.furnished ? 'Yes' : 'No']);
+  if (p.availableFrom) details.push(['Available', new Date(p.availableFrom).toLocaleDateString('en-GB', { month: 'short', year: 'numeric' })]);
+  if (p.minStay) details.push(['Min. stay', p.minStay + (p.minStay === 1 ? ' month' : ' months')]);
+
+  document.getElementById('sidebarDetails').innerHTML = details.map(([l, v]) =>
+    `<li><span class="detail-label">${l}</span><span class="detail-value">${v}</span></li>`
+  ).join('');
+
+  // Update enquire link with property name
+  const enquireBtn = document.getElementById('sidebarEnquireBtn');
+  enquireBtn.href = 'https://primecyprus.xyz/contact.html?property=' + encodeURIComponent(p.title || '');
+}
+
+function renderDescription(desc) {
+  const el = document.getElementById('propDesc');
+  if (!desc) { el.innerHTML = '<p>Contact us for more details about this property.</p>'; return; }
+  // Support both plain string and block content array
+  if (typeof desc === 'string') {
+    el.innerHTML = desc.split('\n\n').map(para => `<p>${para}</p>`).join('');
+  } else if (Array.isArray(desc)) {
+    // Portable Text — extract plain text
+    const text = desc.map(block => {
+      if (block._type === 'block' && block.children) {
+        return block.children.map(span => span.text || '').join('');
+      }
+      return '';
+    }).filter(Boolean).join('\n\n');
+    el.innerHTML = text.split('\n\n').map(para => `<p>${para}</p>`).join('');
+  }
+}
+
+async function loadProperty(slug) {
+  const query = `*[_type == "rental" && slug.current == $slug][0] {
+    title, location, slug, description, priceMonthly, minStay, maxStay,
+    bedrooms, bathrooms, areaM2, propertyType, furnished, availableFrom,
+    "images": images[].asset._ref,
+    coordinates
+  }`;
+  const url = `${API}?query=${encodeURIComponent(query)}&$slug=${encodeURIComponent(JSON.stringify(slug))}`;
+
+  const res = await fetch(url);
+  if (!res.ok) throw new Error('API error');
+  const data = await res.json();
+  return data.result;
+}
+
+document.addEventListener('DOMContentLoaded', async () => {
+  const params = new URLSearchParams(window.location.search);
+  const slug = params.get('slug');
+
+  const stateLoading = document.getElementById('stateLoading');
+  const stateError = document.getElementById('stateError');
+  const stateNotfound = document.getElementById('stateNotfound');
+  const stateProperty = document.getElementById('stateProperty');
+
+  if (!slug) {
+    stateLoading.style.display = 'none';
+    stateNotfound.style.display = 'flex';
+    return;
+  }
+
+  try {
+    const p = await loadProperty(slug);
+
+    stateLoading.style.display = 'none';
+
+    if (!p) {
+      stateNotfound.style.display = 'flex';
+      return;
+    }
+
+    // Update page title and OG tags
+    document.title = `${p.title} — Prime Cyprus Rentals`;
+
+    // Populate content
+    document.getElementById('propLocation').textContent = p.location || '';
+    document.getElementById('propTitle').textContent = p.title || '';
+    document.getElementById('breadcrumbLocation').textContent = p.location || '';
+    document.getElementById('breadcrumbTitle').textContent = p.title || '';
+
+    buildGallery(p.images || []);
+    renderMeta(p);
+    renderDescription(p.description);
+    renderSidebar(p);
+
+    // Show property
+    stateProperty.style.display = 'block';
+
+    // Trigger animations
+    setTimeout(() => {
+      document.querySelectorAll('.animate-in').forEach((el, i) => {
+        setTimeout(() => el.classList.add('visible'), i * 80);
+      });
+    }, 100);
+
+  } catch (err) {
+    console.error(err);
+    stateLoading.style.display = 'none';
+    stateError.style.display = 'flex';
+  }
+
+  // Gallery nav
+  document.getElementById('galleryPrev').addEventListener('click', () => setGalleryImage(galleryIndex - 1));
+  document.getElementById('galleryNext').addEventListener('click', () => setGalleryImage(galleryIndex + 1));
+
+  // Share
+  const toast = document.getElementById('shareToast');
+  let toastT;
+  function showToast() {
+    clearTimeout(toastT);
+    toast.classList.add('show');
+    toastT = setTimeout(() => toast.classList.remove('show'), 2400);
+  }
+  document.getElementById('shareBtn').addEventListener('click', () => {
+    const url = window.location.href;
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(url).then(showToast);
+    } else {
+      const ta = document.createElement('textarea');
+      ta.value = url; ta.style.cssText = 'position:fixed;opacity:0';
+      document.body.appendChild(ta); ta.select(); document.execCommand('copy');
+      document.body.removeChild(ta); showToast();
+    }
+  });
+
+  // Scroll effect on nav (subtle, matches index behavior)
+  window.addEventListener('scroll', () => {
+    const nav = document.querySelector('.nav');
+    nav.style.borderBottomColor = window.scrollY > 50 ? 'rgba(255,255,255,0.1)' : 'rgba(255,255,255,0.07)';
+  });
+});
+</script>
+</body>
+</html>
