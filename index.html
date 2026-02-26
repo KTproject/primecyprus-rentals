@@ -244,6 +244,7 @@ p { margin-bottom: 16px; color: var(--text-secondary); font-size: 1rem; line-hei
   transition: var(--transition); box-shadow: var(--shadow-sm);
   display: flex; flex-direction: column;
 }
+a.rental-card { display: flex; flex-direction: column; color: inherit; text-decoration: none; }
 .rental-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-md); border-color: var(--border-copper); }
 
 .rental-card__img {
@@ -563,7 +564,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const grid = document.getElementById('listingsGrid');
     grid.innerHTML = result.map(r => `
-      <div class="rental-card animate-in">
+      <a href="property.html?slug=${r.slug?.current || ''}" class="rental-card animate-in">
         <div class="rental-card__img"><img src="${r.imageUrl ? 'https://cdn.sanity.io/images/7ic15vv6/production/' + r.imageUrl.replace(/^image-/,'').replace(/-([a-z]+)$/,'.$1') : ''}" alt="${r.title}"></div>
         <div class="rental-card__body">
           <div class="rental-card__location">${r.location || ''}</div>
@@ -572,10 +573,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
           <div class="rental-card__footer">
             <div class="rental-card__price">€${r.priceMonthly}<span class="rental-card__price-period"> /month</span></div>
-            <a href="property.html?slug=${r.slug?.current || ''}" class="rental-card__cta">View property &rarr;</a>
+            <span class="rental-card__cta">View property &rarr;</span>
           </div>
         </div>
-      </div>
+      </a>
     `).join('');
     grid.querySelectorAll('.animate-in').forEach(el => el.classList.add('visible'));
   }
